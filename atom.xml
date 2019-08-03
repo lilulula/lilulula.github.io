@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lulalilu.github.io/</id>
     <title>碎碎念</title>
-    <updated>2019-08-02T08:18:07.057Z</updated>
+    <updated>2019-08-03T03:51:57.117Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lulalilu.github.io/"/>
     <link rel="self" href="https://lulalilu.github.io//atom.xml"/>
@@ -10,6 +10,30 @@
     <logo>https://lulalilu.github.io//images/avatar.png</logo>
     <icon>https://lulalilu.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, 碎碎念</rights>
+    <entry>
+        <title type="html"><![CDATA[为什么现在还要写博客呢？]]></title>
+        <id>https://lulalilu.github.io//post/wei-shi-me-xian-zai-huan-yao-xie-bo-ke-ni</id>
+        <link href="https://lulalilu.github.io//post/wei-shi-me-xian-zai-huan-yao-xie-bo-ke-ni">
+        </link>
+        <updated>2019-08-02T06:28:25.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>风吹枯叶落，落叶生肥土，肥土丰香果，孜孜不倦，不紧不慢。- 《人生果实》</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>风吹枯叶落，落叶生肥土，肥土丰香果，孜孜不倦，不紧不慢。- 《人生果实》</p>
+</blockquote>
+<!-- more -->
+<h2 id="为什么要写博客">为什么要写博客？</h2>
+<p>似乎从去年</p>
+<p>去年年初在友邻处看到的新年计划中有一句“希望能够更多的产出内容，而非消费别人的内容”，到</p>
+<p>输入太多，输出太少，似乎总是阅读收藏消费，从别人产出的内容中寻找共鸣，却很少表达，或者说是不会表达。</p>
+<p>最近交了一个笔友，从短文字的即时通讯交流，转变为需要积累总结思考最后转变为文字交流，同时不再急于立即得到回复，这种放慢节奏的方式很喜欢。</p>
+<h2 id="为什么现在这个时候才开始">为什么现在这个时候才开始</h2>
+<h2 id="准备写什么东西呢">准备写什么东西呢？</h2>
+<p>人总是要给自己的脑子里的想法一个输出口的，最方便的方式是身边的朋友，随口能聊，还有社交网络匿名树洞一样，或者写信，交流方式</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://lulalilu.github.io//post/hello-gridea</id>
