@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lulalilu.github.io/</id>
     <title>碎碎念</title>
-    <updated>2019-08-15T02:32:07.494Z</updated>
+    <updated>2019-09-05T05:35:52.179Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lulalilu.github.io/"/>
     <link rel="self" href="https://lulalilu.github.io//atom.xml"/>
@@ -10,6 +10,18 @@
     <logo>https://lulalilu.github.io//images/avatar.png</logo>
     <icon>https://lulalilu.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, 碎碎念</rights>
+    <entry>
+        <title type="html"><![CDATA[201909]]></title>
+        <id>https://lulalilu.github.io//post/201909</id>
+        <link href="https://lulalilu.github.io//post/201909">
+        </link>
+        <updated>2019-09-05T05:27:19.000Z</updated>
+        <content type="html"><![CDATA[<p>20190905<br>
+中午了解到一起入职的对接校招RD要离职了<br>
+午睡睡不着在反思自己为什么一直这么容易相信承诺，所以容易受伤，更多的原因是太不相信人性了，所以至少希望大家能够对自己说出的有限制条件的话更容易让人相信一些吧。<br>
+这个世界这么大，短暂的相遇还能处得来合作一阵，然后继续走自己的路，在分叉路口到个别，一切也都可以理解，但是现在这个场景，往往都是在最后一刻，反思的时候总有种被欺骗的感觉（不是个人而是环境带来的感觉）。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[为什么现在还要写博客呢？]]></title>
         <id>https://lulalilu.github.io//post/wei-shi-me-xian-zai-huan-yao-xie-bo-ke-ni</id>
