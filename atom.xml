@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lulalilu.github.io/</id>
     <title>碎碎念</title>
-    <updated>2019-10-18T06:18:25.698Z</updated>
+    <updated>2019-10-28T01:45:57.582Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lulalilu.github.io/"/>
     <link rel="self" href="https://lulalilu.github.io//atom.xml"/>
@@ -10,6 +10,26 @@
     <logo>https://lulalilu.github.io//images/avatar.png</logo>
     <icon>https://lulalilu.github.io//favicon.ico</icon>
     <rights>All rights reserved 2019, 碎碎念</rights>
+    <entry>
+        <title type="html"><![CDATA[Never Lost Again]]></title>
+        <id>https://lulalilu.github.io//post/never-lost-again</id>
+        <link href="https://lulalilu.github.io//post/never-lost-again">
+        </link>
+        <updated>2019-10-23T06:55:39.000Z</updated>
+        <content type="html"><![CDATA[<p>挖个坑<br>
+埋点土</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[《幕后产品》]]></title>
+        <id>https://lulalilu.github.io//post/lesslessmu-hou-chan-pin-greatergreater</id>
+        <link href="https://lulalilu.github.io//post/lesslessmu-hou-chan-pin-greatergreater">
+        </link>
+        <updated>2019-10-23T06:48:29.000Z</updated>
+        <content type="html"><![CDATA[<p>挖个坑<br>
+埋点土</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[工作小札]]></title>
         <id>https://lulalilu.github.io//post/gong-zuo-xiao-zha</id>
@@ -70,6 +90,32 @@
 <li>已经完成的内容要好好写wiki同步信息给PA和所有相关方，减少沟通成本</li>
 <li>会议组织者：抓住重点而不是跟大家过一遍所有逻辑，最重要的是问大家要决策结果，拉齐认知。</li>
 </ol>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[地图导航产品分析报告（2017.07 搬运）]]></title>
+        <id>https://lulalilu.github.io//post/di-tu-dao-hang-chan-pin-fen-xi-bao-gao-201707</id>
+        <link href="https://lulalilu.github.io//post/di-tu-dao-hang-chan-pin-fen-xi-bao-gao-201707">
+        </link>
+        <updated>2019-09-01T04:59:19.000Z</updated>
+        <content type="html"><![CDATA[<p>当年校招下决心要做产品，看了一堆推荐入门的书之后满腔热情开始分析产品。<br>
+没有实习经历，只能傻了吧唧自己瞎琢磨花了一段时间磨出来下面的内容，也算是后来找工作的敲门砖，现在回头看起来里面的观点真的太幼稚了，但是还是还能回想起来当时截图对比分析时的乐趣和初心<br>
+高德和百度都做到10.0了，从当时觉得很酷很有价值的工具产品，到现在挂在嘴上的竞品，时间的力量。<br>
+PS：之前的图床挂了，最后还是从邮箱里面找到PDF重新转上来，阅读体验不好也只能见谅了</p>
+<p><img src="https://lulalilu.github.io//post-images/1571720381282.jpg" alt=""><br>
+<img src="https://lulalilu.github.io//post-images/1571720387894.jpg" alt=""><br>
+<img src="https://lulalilu.github.io//post-images/1571720393975.jpg" alt=""><br>
+<img src="https://lulalilu.github.io//post-images/1571720398726.jpg" alt=""><br>
+<img src="https://lulalilu.github.io//post-images/1571720405828.jpg" alt=""><br>
+<img src="https://lulalilu.github.io//post-images/1571720428060.jpg" alt=""><br>
+<img src="https://lulalilu.github.io//post-images/1571720435525.jpg" alt=""><br>
+<img src="https://lulalilu.github.io//post-images/1571720441708.jpg" alt=""><br>
+<img src="https://lulalilu.github.io//post-images/1571720449842.jpg" alt=""><br>
+<img src="https://lulalilu.github.io//post-images/1571720454525.jpg" alt=""><br>
+<img src="https://lulalilu.github.io//post-images/1571720458741.jpg" alt=""><br>
+<img src="https://lulalilu.github.io//post-images/1571720463758.jpg" alt=""><br>
+<img src="https://lulalilu.github.io//post-images/1571720468092.jpg" alt=""><br>
+<img src="https://lulalilu.github.io//post-images/1571720471992.jpg" alt=""></p>
 ]]></content>
     </entry>
     <entry>
