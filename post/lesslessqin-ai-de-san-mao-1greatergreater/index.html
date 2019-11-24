@@ -1,103 +1,117 @@
+
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+<meta charset="utf-8" >
+
 <title>《亲爱的三毛》 | 碎碎念</title>
-<link rel="shortcut icon" href="https://lulalilu.github.io//favicon.ico?v=1574575235172">
+<meta name="description" content="Memory is important">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://lulalilu.github.io//favicon.ico?v=1574577992539">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
 <link rel="stylesheet" href="https://lulalilu.github.io//styles/main.css">
 
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
 
 
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://lulalilu.github.io/">
-  <img class="avatar" src="https://lulalilu.github.io//images/avatar.png?v=1574575235172" alt="">
-  </a>
-  <h1 class="site-title">
-    碎碎念
-  </h1>
-  <p class="site-description">
-    Memory is important
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-      
-        <a href="https://lulalilu.github.io//post/dou-ban-shu-ying-yin/" class="menu">
-          我的书影音
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <div id="app" class="main">
+      <div class="site-header-container">
+  <div class="site-header">
+    <div class="left">
+      <a href="https://lulalilu.github.io/">
+        <img class="avatar" src="https://lulalilu.github.io//images/avatar.png?v=1574577992539" alt="" width="32px" height="32px">
+      </a>
+      <a href="https://lulalilu.github.io/">
+        <h1 class="site-title">碎碎念</h1>
+      </a>
+    </div>
+    <div class="right">
+      <transition name="fade">
+        <i class="icon" :class="{ 'icon-close-outline': menuVisible, 'icon-menu-outline': !menuVisible }" @click="menuVisible = !menuVisible"></i>
+      </transition>
+    </div>
   </div>
 </div>
 
+<transition name="fade">
+  <div class="menu-container" style="display: none;" v-show="menuVisible">
+    <div class="menu-list">
+      
+        
+          <a href="/" class="menu purple-link">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="menu purple-link">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="menu purple-link">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="menu purple-link">
+            关于
+          </a>
+        
+      
+        
+          <a href="https://lulalilu.github.io//post/dou-ban-shu-ying-yin/" class="menu purple-link">
+            我的书影音
+          </a>
+        
+      
+    </div>
+  </div>
+</transition>
 
+
+      <div class="content-container">
         <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              《亲爱的三毛》
-            </h2>
-            <div class="post-info">
-              <time class="post-time">
-                · 2019-11-09 ·
-              </time>
-              
-                <a href="https://lulalilu.github.io//tag/ltcvoOyb_" class="post-tag">
-                  # 读书
-                </a>
-              
+          
+            <div class="feature-container" style="background-image: url('https://lulalilu.github.io//post-images/lesslessqin-ai-de-san-mao-1greatergreater.jpg')">
             </div>
+          
+          <h2 class="post-title">《亲爱的三毛》</h2>
+          <div class="post-info post-detail-info">
+            <span><i class="icon-calendar-outline"></i> 2019-11-09</span>
             
-              <div class="post-feature-image" style="background-image: url('https://lulalilu.github.io//post-images/lesslessqin-ai-de-san-mao-1greatergreater.jpg')">
-              </div>
+              <span>
+                <i class="icon-pricetags-outline"></i>
+                
+                  <a href="https://lulalilu.github.io//tag/ltcvoOyb_">
+                    读书
+                    
+                  </a>
+                
+              </span>
             
-            <div class="post-content">
-              <p>昨晚拒绝完团建和聚餐之后，独自一人回家地铁路上看到豆瓣的这个话题「你是如何克服人生的无意义感的？」中第一篇文章推荐的三毛的一封回信，回想起来很久很久以前在ONE APP上的一个回信，也是说一个人生活的建议就是不要保持只有“一个人”的状态，哪怕养盆绿植，也要去考虑去给它浇水。</p>
+          </div>
+          <div class="post-content">
+            <p>昨晚拒绝完团建和聚餐之后，独自一人回家地铁路上看到豆瓣的这个话题「你是如何克服人生的无意义感的？」中第一篇文章推荐的三毛的一封回信，回想起来很久很久以前在ONE APP上的一个回信，也是说一个人生活的建议就是不要保持只有“一个人”的状态，哪怕养盆绿植，也要去考虑去给它浇水。</p>
 <p>找来这本书看，收录了她在报刊上和读者的书信交流内容，一直持续到90年，30年前的文字还是这么有温度。和正午信箱有些类似，来信大部分都是生活的苦闷孤独迷茫，30年前和现在有什么区别呢，回信也看到了正午编辑的无奈，但是还是看到她一直在鼓励读者去热爱生活，虽然91年就自杀了。</p>
 <!-- more -->
 <p>亲爱的三毛<br>
@@ -147,59 +161,86 @@
 <p>在过去十数年来，收到上万封陌生朋友的来信，拆来拆去，只见一个个善良但是十分寂寞的灵魂。包括我自己在内，孤寂好似成了一种传染病，久了，也会习惯。偶尔，有另一个人，给了我一些亲切的友爱，内心被激起的震动，方才又提醒了我：“其实有谁耐得住寂寞呢，不过无可奈何而已。”当然，我的要求也并不那么多，多到不去承担自己。</p>
 </blockquote>
 
-            </div>
-          </article>
+          </div>
         </div>
 
         
           <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://lulalilu.github.io//post/lesslessjia-zhang-ke-dian-ying-shou-ji-greatergreater">
+            <a class="purple-link" href="https://lulalilu.github.io//post/lesslessjia-zhang-ke-dian-ying-shou-ji-greatergreater">
               <h3 class="post-title">
-                《贾樟柯电影手记》
+                下一篇：《贾樟柯电影手记》
               </h3>
             </a>
           </div>
+          
+      </div>
+
+      
+        
+          <div id="gitalk-container"></div>
         
 
         
-          
-            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+      
 
-<div id="gitalk-container"></div>
-
-<script>
-
-  var gitalk = new Gitalk({
-    clientID: '5414d9ed5f81707eaf21',
-    clientSecret: '377183616768ec796887778c81a40fd5a914f8d8',
-    repo: 'lulalilu.github.io',
-    owner: 'lulalilu',
-    admin: ['lulalilu'],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
-
-  gitalk.render('gitalk-container')
-
-</script>
-
-          
-
-          
-        
-
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://lulalilu.github.io//atom.xml" target="_blank">RSS</a>
+      <div class="site-footer">
+  <div class="slogan">Memory is important</div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://lulalilu.github.io//atom.xml" target="_blank">RSS</a>
 </div>
 
-<script>
-  hljs.initHighlightingOnLoad()
+
+    </div>
+    <script type="application/javascript">
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
 </script>
 
-      </div>
-    </div>
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '5414d9ed5f81707eaf21',
+        clientSecret: '377183616768ec796887778c81a40fd5a914f8d8',
+        repo: 'lulalilu.github.io',
+        owner: 'lulalilu',
+        admin: ['lulalilu'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
   </body>
 </html>
