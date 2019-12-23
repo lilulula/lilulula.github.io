@@ -1,35 +1,27 @@
 <html>
   <head>
     <meta charset="utf-8" />
-<meta name="description" content="" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>有趣的博客和文字（持更ing） | 碎碎念</title>
-<link rel="shortcut icon" href="https://lulalilu.github.io//favicon.ico?v=1577080456325">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="shortcut icon" href="https://lulalilu.github.io//favicon.ico?v=1577085269123">
+<link href="https://cdn.remixicon.com/releases/v2.1.0/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://lulalilu.github.io//styles/main.css">
-
-<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
-
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153280676-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-153280676-1');
-</script>
+<link rel="alternate" type="application/atom+xml" title="有趣的博客和文字（持更ing） | 碎碎念 - Atom Feed" href="https://lulalilu.github.io//atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
+
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
     <div class="main">
       <div class="main-content">
         <div class="site-header">
   <a href="https://lulalilu.github.io/">
-  <img class="avatar" src="https://lulalilu.github.io//images/avatar.png?v=1577080456325" alt="">
+  <img class="avatar" src="https://lulalilu.github.io//images/avatar.png?v=1577085269123" alt="">
   </a>
   <h1 class="site-title">
     碎碎念
@@ -85,21 +77,24 @@
   </div>
 </div>
 
-
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
               有趣的博客和文字（持更ing）
             </h2>
             <div class="post-info">
-              <time class="post-time">
-                · 2019-11-15 ·
-              </time>
+              <span>
+                2019-11-15
+              </span>
+              <span>
+                1 min read
+              </span>
               
             </div>
             
-            <div class="post-content">
-              <p>很早开始就</p>
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>很早开始就</p>
 <h1 id="博客">博客</h1>
 <ol>
 <li>很可爱的94年妹子，最开始是从利器访谈中找到的，访谈最后一个问题：推荐一件生活中的利器给大家，回答是三观相合的可爱男朋友。https://www.liaoyuqin.com/post/it-s-me/liqixproject</li>
@@ -116,6 +111,16 @@
 </ol>
 <h1 id=""></h1>
 
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#%E5%8D%9A%E5%AE%A2">博客</a></li>
+<li><a href="#%E7%BD%91%E7%AB%99">网站</a></li>
+<li><a href="#%E4%BA%A7%E5%93%81%E5%8A%9F%E8%83%BD">产品功能</a></li>
+<li></li>
+</ul>
+
+              </div>
             </div>
           </article>
         </div>
@@ -160,15 +165,54 @@
         
 
         <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | 
-  <a class="rss" href="https://lulalilu.github.io//atom.xml" target="_blank">RSS</a>
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://lulalilu.github.io//atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
 </div>
-
-<script>
-  hljs.initHighlightingOnLoad()
-</script>
 
       </div>
     </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
   </body>
 </html>
