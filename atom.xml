@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://lilulula.github.io/</id>
     <title>碎碎念</title>
-    <updated>2020-01-03T04:54:21.101Z</updated>
+    <updated>2020-01-03T04:55:34.488Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://lilulula.github.io/"/>
     <link rel="self" href="https://lilulula.github.io//atom.xml"/>
@@ -60,25 +60,31 @@
 <img src="https://lilulula.github.io//post-images/1577889383977.jpg" alt=""></p>
 </blockquote>
 <ol start="5">
-<li>
-<p>独自一人在巴黎的画面和BGM超级配<br>
-<img src="https://lilulula.github.io//post-images/1578014337603.jpeg" alt=""><br>
+<li>独自一人在巴黎的画面和BGM超级配</li>
+</ol>
+<blockquote>
+<p><img src="https://lilulula.github.io//post-images/1578014337603.jpeg" alt=""><br>
 <img src="https://lilulula.github.io//post-images/1578014343692.jpeg" alt=""><br>
 <img src="https://lilulula.github.io//post-images/1578014356471.jpeg" alt=""></p>
-</li>
-<li>
-<p>在纽约无家可归把东西都塞进储物柜的时候剩下的椅子，和自己一样格格不入<br>
-<img src="https://lilulula.github.io//post-images/1577889337292.jpg" alt=""></p>
-</li>
-<li>
-<p>女主和闺蜜之前的调侃(PS 电影频道的中文翻译)<br>
-<img src="https://lilulula.github.io//post-images/1577889441652.jpg" alt=""></p>
-</li>
-<li>
-<p>谈到什么是理想中的爱情，那种难以描述和周围人的尴尬真的是切身体会了<br>
-<img src="https://lilulula.github.io//post-images/1577886349930.jpg" alt=""></p>
-</li>
+</blockquote>
+<ol start="6">
+<li>在纽约无家可归把东西都塞进储物柜的时候剩下的椅子，和自己一样格格不入</li>
 </ol>
+<blockquote>
+<figure data-type="image" tabindex="3"><img src="https://lilulula.github.io//post-images/1577889337292.jpg" alt=""></figure>
+</blockquote>
+<ol start="7">
+<li>女主和闺蜜之前的调侃(PS 电影频道的中文翻译)</li>
+</ol>
+<blockquote>
+<figure data-type="image" tabindex="4"><img src="https://lilulula.github.io//post-images/1577889441652.jpg" alt=""></figure>
+</blockquote>
+<ol start="8">
+<li>谈到什么是理想中的爱情，那种难以描述和周围人的尴尬真的是切身体会了</li>
+</ol>
+<blockquote>
+<figure data-type="image" tabindex="5"><img src="https://lilulula.github.io//post-images/1577886349930.jpg" alt=""></figure>
+</blockquote>
 ]]></content>
     </entry>
     <entry>
