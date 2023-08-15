@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta name="renderer" content="webkit">
+<meta name="description" content="Memory is important">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+<title>碎碎念</title>
+<link href="https://lilulula.github.io//styles/main.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/KaTeX/0.10.2/katex.min.css"/>
+<script src="//cdn.bootcss.com/KaTeX/0.10.2/katex.min.js"></script>
+<script src="//cdn.bootcss.com/KaTeX/0.10.2/contrib/auto-render.min.js"></script>
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/jquery.js"></script>
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/jquery.pjax.min.js"></script>
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/basic.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+<script async type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script async type="text/javascript" src="https://lilulula.github.io//media/scripts/search.js"></script>
+
+<script type="text/javascript" src="https://lilulula.github.io//media/js/lightgallery.min.js"></script>
+<script src="https://cdn.bootcss.com/tocbot/4.8.1/tocbot.js"></script>
+
+  
+  <meta name="google-site-verification" content="_ltrafuJbmLyX8JX46vuFhMg13tv9yJuC2m0SxJsYFY" />
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="logo_title">
+		  
+        <div class="title animated fadeInDown"><img id="img1" alt="logo" style="display:inline-block;" src="https://lilulula.github.io//images/avatar.png"/>
+<script>
+var r = 0;
+    window.onload = function(){
+        var current = 0;
+        document.getElementById('img1').onclick = function(){
+            current = (current+90)%360;
+            this.style.transform = 'rotate('+current+'deg)';
+        }
+    };
+</script>
+          <h1 title="碎碎念" class="weaklink"><a  href="/">碎碎念</a>
+
+          </h1>
+
+          <div class="navbar weaklink">
+            <div class="normal_nav">
+
+<div class="bitcron_nav_container">
+
+
+  <div class="bitcron_nav">
+    <div class="mixed_site_nav_wrap site_nav_wrap">
+		
+      <ul class="mixed_site_nav site_nav sm sm-base">
+	  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/post/about" class="selected active current nav__item" >关于</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="https://lulalilu.github.io//post/dou-ban-shu-ying-yin/" class="selected active current nav__item" >我的书影音</a>
+  </li>
+  
+ 
+ <li>
+
+      </ul>
+	  
+
+      <div class="clear clear_nav_inline_end"></div>
+
+<div class="search">
+<i class="search-icon fa fa-search search-start"></i>
+<input type="text" class="search-input" placeholder="Searching..." />
+<i class="search-icon fa fa-refresh search-clear"></i>
+<div class="search-results"></div>
+</div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="clear clear_nav_end"></div>
+
+</div>
+
+            </div>
+			
+			<div class="hamberger"><i class="fa fa-bars"></i>
+<i class="fa fa-times"></i>
+
+			</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hidden_nav animated fadeInDown">
+
+<div class="bitcron_nav_container">
+
+
+  <div class="bitcron_nav">
+    <div class="mixed_site_nav_wrap site_nav_wrap">
+      <ul class="mixed_site_nav site_nav sm sm-base">
+	
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/post/about" class="selected active current nav__item" >关于</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="https://lulalilu.github.io//post/dou-ban-shu-ying-yin/" class="selected active current nav__item" >我的书影音</a>
+
+  </li>
+
+
+
+
+      </ul>
+
+      <div class="clear clear_nav_inline_end"></div>
+    </div>
+
+  </div>
+
+
+
+  <div class="clear clear_nav_end"></div>
+
+</div>
+
+      </div>
+
+    </div>
+
+<style type="text/css">
+.search {
+    position: relative;
+    height: 30px;
+    text-align: right;
+    line-height: 30px;
+    padding-right: 10px;
+}
+
+.search .search-icon {
+    float: right;
+    height: 100%;
+    margin: 0 10px;
+    line-height: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.search .search-input {
+    float: right;
+    width: 30%;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.search .search-clear {
+    display: none;
+}
+
+.search .search-results {
+    display: block;
+    z-index: 1000;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    width: 50%;
+    max-height: 400px;
+    overflow: auto;
+    text-align: left;
+    border-radius: 5px;
+    box-shadow: 0 .3rem .5rem #333;
+}
+
+.search .search-results .result-item {
+    color: #000;
+    margin: 5px;
+    padding: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+</style>
+
+
+    <div class="main" id="pjax-container">
+      <div class="main-inner">
+
+<div class="content">
+
+
+
+
+
+
+  <div class="post_list" >
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://lilulula.github.io/post/lesswaking-lifegreater-and-lessrichard-linklater-dream-is-destinygreater/" >🎬《Waking life》 &amp;《Richard Linklater: Dream Is Destiny》</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p><p><a href="https://movie.douban.com/subject/1304981/">半梦半醒的人生 🌟🌟🌟🌟🌟</a><br>
+<a href="https://movie.douban.com/subject/26681652/">理查德·林克莱特：筑梦而生 🌟🌟🌟🌟</a></p>
+<p>写完上一篇之后断断续续看了一些电影，但是始终没有想要表达的内容和欲望，自己想了一下有两个原因，一个是没有看电影的欲望，自己似乎逐渐失去了看电影的热情和好奇心，偶尔新片宣传或者出资源了找来看看，老片子也耐不下性子去仔细的看。二是没有表达的内容，因为给自己定的目标，所以在豆瓣上找了一些推荐来看，但是看完总有一种就这样啊，似乎很难产生碰撞和表达欲。最后的最后就是带着输出的目标看电影很多时候会很有压力，会在没有输出和碰撞或者语言表达不出来的时候产生很大的焦虑而失去了做这件事本身的乐趣。</p>
+<p>最近放假放松了，把之前下载的电影陆续找出来看，Waking Life 断断续续看的差点睡着了，就像一个视频的哲学入门课，大段的哲学对白讨论，只有少数能产生共鸣，关于对于电影表达的思考和语言的意义，专门找了一个<a href="https://wakinglifemovie.net/transcript">剧本网站</a>。</p>
+<p>看完之后就想着把导演的纪录片也找来看看，没想到B站竟然有版权©️，一直因为他的电影似乎总是执着于时间所以觉得很特别，最喜欢的《爱在三部曲》相同的演员拍了18年，《少年时代》跟着小演员一起拍了12年。纪录片的第一个画面也说了“他的电影是关于时间的电影”。<br>
+<img src="https://lilulula.github.io//post-images/1579688824950.png" alt="" loading="lazy"></p>
+</p></div></div>
+  <a class="pure-button" href="https://lilulula.github.io/post/lesswaking-lifegreater-and-lessrichard-linklater-dream-is-destinygreater/">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2020-01-22
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		778
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		3 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://lilulula.github.io/post/152-bu-dian-ying-ji-hua-lesslessfrances-ha-2012greatergreater/" >🎬《Frances Ha (2012)》</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p><p>上周在整理年度观影十佳的时候发现竟然很难凑齐10部，开始反思自己选片的标准问题以及好片自己的理解度问题，所以就有了这个计划，不再盲目地去刷片儿，而是谨慎一点选一些自己喜欢的电影和书，同时看完之后也将转瞬即逝的感受尽量记录下来。</p>
+<p><a href="https://movie.douban.com/subject/11527487/">Frances Ha (2012)</a><br>
+豆瓣评分 8.4<br>
+个人评分 四星</p>
+</p></div></div>
+  <a class="pure-button" href="https://lilulula.github.io/post/152-bu-dian-ying-ji-hua-lesslessfrances-ha-2012greatergreater/">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2020-01-01
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://lilulula.github.io/tag/4Y0HqtcWr/" class="tag">
+				电影
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		728
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		3 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://lilulula.github.io/post/2019-nian-zhong-zong-jie/" >2019年终总结</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p></p></div></div>
+  <a class="pure-button" href="https://lilulula.github.io/post/2019-nian-zhong-zong-jie/">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2019-12-28
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		2784
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		10 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://lilulula.github.io/post/zi-you-jiu-shi-bu-zai-xun-qiu-ta-ren-ren-ke-tao-yan-de-yong-qi/" >📖《被讨厌的勇气》自由就是不再寻求他人认可</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p><ul>
+<li>
+<p>目的论 VS 原因论</p>
+</li>
+<li>
+<p>为什么不幸福</p>
+<ul>
+<li>不要抱怨：不要只关注被给予(安排)了什么，而是看如何利用</li>
+<li>做出行动：改变需要勇气</li>
+</ul>
+</li>
+<li>
+<p>一切烦恼都是人际关系的烦恼</p>
+<ul>
+<li>自卑与自卑情结</li>
+<li>夸耀不幸</li>
+</ul>
+</li>
+<li>
+<p>人生的三大课题：交友课题、工作课题以及爱的课题</p>
+</li>
+<li>
+<p>自由就是不再寻求别人认可</p>
+</li>
+<li>
+<p>课题分离 》共同体感觉（归属感）</p>
+</li>
+<li>
+<p>平等（横向）关系</p>
+<ul>
+<li>建立共同体（自我接纳-他者信赖-他者贡献）</li>
+</ul>
+</li>
+<li>
+<p>心理目标（幸福感）</p>
+<ul>
+<li>人生的意义，由你自己决定</li>
+</ul>
+</li>
+</ul>
+</p></div></div>
+  <a class="pure-button" href="https://lilulula.github.io/post/zi-you-jiu-shi-bu-zai-xun-qiu-ta-ren-ren-ke-tao-yan-de-yong-qi/">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2019-12-15
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://lilulula.github.io/tag/ltcvoOyb_/" class="tag">
+				读书
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		3962
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		14 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://lilulula.github.io/post/lu-xing-zhong-de/" >新疆结伴游—旅行真人秀</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p><p>9个陌生人一起14天新疆游经历，风景很美，人物关系也很复杂，感觉都可以在两辆车上分别装上摄像头，拍一季《花样青春》，凌晨2点投票表决要不要分开.</p>
+<ul>
+<li>D1（9.26）北京——乌鲁木齐</li>
+<li>D2 (9.27)乌鲁木齐——奎屯——独子山大峡谷(景点）——独库公路起点——乔尔玛</li>
+<li>D3 (9.28)乔尔玛——巴音布鲁克（景点）</li>
+<li>D4 (9.29)巴音布鲁克——库车大峡谷（景点）——独库公路终点——库尔勒</li>
+<li>D5(9.30)库尔勒——那拉提草原</li>
+<li>D6(10.1)那拉提——昭苏——夏特——昭苏(换车啦)</li>
+<li>D7(10.2) 昭苏——格登碑——八卦城——伊宁</li>
+<li>D8(10.3) 伊宁——赛里木湖——奎屯</li>
+<li>D9(10.4)奎屯——克拉玛依——五彩滩（景点）——布尔津</li>
+<li>D10(10.5)布尔津-喀纳斯——白哈巴村</li>
+<li>D11(10.6)白哈巴——喀纳斯湖——三湾徒步-布尔津——克拉玛依</li>
+<li>D12(10.7)克拉玛依——乌鲁木齐——吐鲁番</li>
+<li>D13(10.8)吐鲁番——交河故城——千佛洞——吐鲁番博物馆——乌鲁木齐</li>
+<li>D14(10.9)乌鲁木齐——天津——北京</li>
+</ul>
+</p></div></div>
+  <a class="pure-button" href="https://lilulula.github.io/post/lu-xing-zhong-de/">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2019-12-14
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		5420
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		19 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://lilulula.github.io/post/jusitcewhats-the-right-things-to-do/" >📖《Jusitce：What&#39;&#39;s the right things to do》</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p><p>从前段时间更新的新一季奇葩说，到最近顺风车上线之后的女权讨论，还有HK青年争取的自由，社会议题每天都有每个人也都有自己的观点，然后到最后讨论似乎都演变成无法说服之后的不理解和谩骂。</p>
+<p>自己一直挺喜欢这类的讨论，对于不同的观点也很好奇背后的逻辑，很多时候会一边讨论一反思自己长久以来的想法，这本书最有意思的也是非常多的实际案例，并且从正方反方不同的角度互相反驳彼此，看起来非常过瘾，特别是对其中自己之前持有的「自由至上主义」的观点的问题的思考。</p>
+<p>另外算是政治哲学的入门课，康德亚里士多德还有罗尔斯这些之前觉得很深奥的哲学家的论点也初窥一二想要找来继续学习一下。</p>
+<p>PS: 大学开始看的公正课一直没看完，还是书的信息密度更高，经过组合抽象之后能够更加系统的了解讲述的逻辑，同时理论型知识也需要停下来反复思考，而视频往往会使人错过那些闪光的时刻。文字笔记做了很多原文摘录，主要还是因为很多很新的内容很想记录下来，以后时看时新。</p>
+<ol>
+<li>从行动领域向理性王国之间来回思考的过程中发生的思想上的转变，就是道德反思。道德反思很难通过一个人自我反省获得，而需要公民互相理性讨论。</li>
+<li>三种公正进路各有自己的逻辑和问题：<br>
+第一种认为公正意味着使功利或福利最大化—为了最大多数人的最大幸福。<br>
+第二种认为公正意味着尊重人们选择的自由—或者是人们在自由市场中所做出的实际选择（如自由至上主义者们的观点），或者是人们在平等的原初状态中，所可能做出的假想的选择（如平等主义者的观点）。<br>
+第三种进路认为，公正涉及培养德性和推理共同善。</li>
+<li>何谓自由：只要我的行为被生物性所决定，或被社会性所规范，那它都不是真正的自由。根据康德的思想，自由地行动就是自律地行动，自律地行动就是根据我给自己所立的法则而行动—而不是听从于本性或社会传统的指令。这一点算是看的时候对现在的自己最大的触动吧，自律的自由</li>
+<li>努力也有可能是一种有利的、培养的产物。大部分都是我们所处的家庭环境和社会结构决定的。我们越多地将自己的成功看做自己的行为结果，那么我们就越少地感觉到自己对那些落后者所负有的责任。</li>
+</ol>
+</p></div></div>
+  <a class="pure-button" href="https://lilulula.github.io/post/jusitcewhats-the-right-things-to-do/">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2019-11-24
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://lilulula.github.io/tag/ltcvoOyb_/" class="tag">
+				读书
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		17654
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		60 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://lilulula.github.io/post/qin-ai-de-san-mao/" >📖《亲爱的三毛》</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p><p>昨晚拒绝完团建和聚餐之后，独自一人回家地铁路上看到豆瓣的这个话题「你是如何克服人生的无意义感的？」中第一篇文章推荐的三毛的一封回信，回想起来很久很久以前在ONE APP上的一个回信，也是说一个人生活的建议就是不要保持只有“一个人”的状态，哪怕养盆绿植，也要去考虑去给它浇水。</p>
+<p>找来这本书看，收录了她在报刊上和读者的书信交流内容，一直持续到90年，30年前的文字还是这么有温度。和正午信箱有些类似，来信大部分都是生活的苦闷孤独迷茫，30年前和现在有什么区别呢，回信也看到了正午编辑的无奈，但是还是看到她一直在鼓励读者去热爱生活，虽然91年就自杀了。</p>
+</p></div></div>
+  <a class="pure-button" href="https://lilulula.github.io/post/qin-ai-de-san-mao/">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2019-11-09
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://lilulula.github.io/tag/ltcvoOyb_/" class="tag">
+				读书
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		2180
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		8 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://lilulula.github.io/post/never-lost-again/" >Google Map 从0到1的过程</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p><p>Never Lost Again<br>
+The Google Mapping Revolution That Sparked New Industries and Augmented Our Reality</p>
+<p>最开始知道这本书也是看到公众号中有一篇拆书的文章，当时只有英文版，之后出了中文版就果断买回来看了，读了7年的GIS专业看完整本书有种热血沸腾的感觉。</p>
+</p></div></div>
+  <a class="pure-button" href="https://lilulula.github.io/post/never-lost-again/">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2019-10-23
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://lilulula.github.io/tag/ltcvoOyb_/" class="tag">
+				读书
+			</a>
+			
+			<a href="https://lilulula.github.io/tag/2mDZ8v3Gl/" class="tag">
+				产品
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		1938
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		7 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://lilulula.github.io/post/san-jie-ke-chan-pin-p2-ke-cheng/" >三节课产品P2课程</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p><p>P2课程开始就强调更多的在于思考，作业比较少，但是感觉还是没有P1课程内容的丰富度，而且也没有体会到深度，可能也是自己没有实际的工作经验，但是课程数量、拓展材料以及思考题也都变少了很多。</p>
+<ul>
+<li>用户分析
+<ul>
+<li>深度用户分析
+<ul>
+<li>为什么要做用户调研？</li>
+<li>用户调研的常见误区</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>用户画像（用户特征分析）
+<ul>
+<li>基本概念</li>
+<li>操作逻辑</li>
+<li>分析实战</li>
+</ul>
+</li>
+<li>用户调研现场
+<ul>
+<li>望–看用户如何操作的；</li>
+<li>闻–猜测用户在哪里出问题</li>
+<li>问-让用户说说说当时的想法</li>
+<li>切-发现机会验证机会观察反馈</li>
+</ul>
+</li>
+<li>用户故事
+<ul>
+<li>好的故事的特点：</li>
+<li>如何讲故事</li>
+<li>不同场合讲不同的故事</li>
+</ul>
+</li>
+<li>How Might We 分析方法</li>
+<li>竞品分析
+<ul>
+<li>产品分析与竞品调研的基本概念
+<ul>
+<li>为什么要做产品分析调研</li>
+<li>产品调研的常见误区</li>
+</ul>
+</li>
+<li>产品分析与调研的方法
+<ul>
+<li>明确调研的背景和目的</li>
+<li>选定目标产品（功能点调研OR完整产品调研）</li>
+<li>深度体验产品</li>
+<li>还原产品</li>
+<li>分析产品</li>
+<li>产品迭代、运营分析</li>
+<li>横向比较同类产品</li>
+<li>撰写调研分析报告</li>
+<li>推广报告</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>拓展阅读：如何专业且快速地评价一款产品的好坏？
+<ul>
+<li>运营驱动型</li>
+<li>体验驱动型</li>
+<li>技术驱动型</li>
+<li>资源驱动型</li>
+<li>体验驱动型</li>
+<li>技术驱动型</li>
+<li>资源驱动型</li>
+</ul>
+</li>
+<li>【思考题2】</li>
+<li>复杂流程图设计(泳道图)</li>
+<li>需求池与版本优先级管理
+<ul>
+<li>需求收集</li>
+<li>需求整理</li>
+<li>需求反馈</li>
+</ul>
+</li>
+<li>商业产品
+<ul>
+<li>变现</li>
+</ul>
+</li>
+<li>制定功能的考核指标
+<ul>
+<li>需求考核指标如何设置</li>
+<li>例子</li>
+<li>【思考题5】</li>
+</ul>
+</li>
+<li>案例
+<ul>
+<li>【思考题6】</li>
+</ul>
+</li>
+</ul>
+</p></div></div>
+  <a class="pure-button" href="https://lilulula.github.io/post/san-jie-ke-chan-pin-p2-ke-cheng/">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2017-08-31
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://lilulula.github.io/tag/2mDZ8v3Gl/" class="tag">
+				产品
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		4275
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		15 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://lilulula.github.io/post/san-jie-ke-chan-pin-p1-ke-cheng-si-kao-ti-zuo-ye/" >三节课产品P1课程思考题作业</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p><p>这套课程的课后作业挺多，而且听完课程之后可操作性很好，至少知道应该从哪些方面开始下手，而且对于之前觉得很大的问题开始知道从哪些方面开始分析和下手了。收获最大的还是在第二部分的习题，对于产品的拆解，从用户场景需求开始，到业务逻辑，业务流程图，页面流程图，原型设计，最后到需求文档的撰写。</p>
+<ul>
+<li>用产品生命周期图分析产品迭代</li>
+<li>分析用户反馈（02 用户分析）</li>
+<li>分析典型用户的使用场景（02 用户分析）</li>
+<li>需求优先级排序（02需求分析）</li>
+<li>分析产品（03 产品调研）</li>
+<li>软件流程分析（04 功能与流程）</li>
+<li>分析功能页面流程图（05 原型设计和PRD）</li>
+<li>原型设计（05 原型设计和PRD）</li>
+<li>需求文档（05 原型设计和PRD）</li>
+</ul>
+</p></div></div>
+  <a class="pure-button" href="https://lilulula.github.io/post/san-jie-ke-chan-pin-p1-ke-cheng-si-kao-ti-zuo-ye/">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2017-08-18
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://lilulula.github.io/tag/2mDZ8v3Gl/" class="tag">
+				产品
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		5110
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		18 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+	
+
+<div class="paginator pager pagination" >
+	
+  <div class="paginator_container pagination_container">
+	  
+	    
+	  <a href="https://lilulula.github.io/"  class="btn pre newer-posts newer_posts"> Newer Posts </a>
+										
+										
+	  
+	  <a href="https://lilulula.github.io/page/3/"  class="btn next older-posts older_posts"> Older Posts </a>
+
+
+
+    <div style="clear:both;height:0;"></div>
+
+
+  </div>
+
+</div>
+</div>
+  </div>
+</div>
+
+    </div>
+   <div class="footer">
+<div class="site_footer_wrap"><div class="site_footer">
+
+      <div class="mysocials"><div class="my_socials">
+		   
+			   
+    
+			   
+    
+			   
+    
+			   
+    
+			   
+    
+			   
+    
+</div>
+      </div>
+
+      <div class="copyright" id="copyright">
+	  <script>
+		var date=new Date;
+		var year=date.getFullYear(); 
+		document.write("Copyright © "+year+" " + "碎碎念. ");
+		</script>
+		Powered by lula.
+		<br>
+		本站已稳定运行了
+		<strong><script type="text/javascript">
+		var urodz= new Date("08/27/2016");
+		var now = new Date();
+		var ile = now.getTime() - urodz.getTime();
+		var dni = Math.floor(ile / (1000 * 60 * 60 * 24));
+		document.write(+dni)
+		</script>
+		</strong>天
+		<br>
+		本站总访问量为 <strong><span id="busuanzi_value_site_uv"></span></strong> 次
+	  
+      </div>
+	  <img src="https://lilulula.github.io//media/images/font.svg">
+
+    </div>
+
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/love.js"></script>
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/darkmode.js"></script>
+<script>
+var options = {
+  bottom: '64px', // default: '32px'
+  right: '32px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: false, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+
+//const darkmode = new Darkmode(options);
+//darkmode.showWidget();
+
+</script>
+<script>
+hljs.initHighlightingOnLoad();
+</script>
+
+</body>
+
+</html>

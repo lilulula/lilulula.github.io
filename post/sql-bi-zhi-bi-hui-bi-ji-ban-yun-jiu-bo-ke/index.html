@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html>
+  <head lang="zh">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta name="renderer" content="webkit">
+<meta name="description" content="Memory is important">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+<title>SQL必知必会笔记 | 碎碎念</title>
+<link href="https://lilulula.github.io//styles/main.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/KaTeX/0.10.2/katex.min.css"/>
+<script src="//cdn.bootcss.com/KaTeX/0.10.2/katex.min.js"></script>
+<script src="//cdn.bootcss.com/KaTeX/0.10.2/contrib/auto-render.min.js"></script>
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/jquery.js"></script>
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/jquery.pjax.min.js"></script>
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/basic.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+<script async type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script async type="text/javascript" src="https://lilulula.github.io//media/scripts/search.js"></script>
+
+<script type="text/javascript" src="https://lilulula.github.io//media/js/lightgallery.min.js"></script>
+<script src="https://cdn.bootcss.com/tocbot/4.8.1/tocbot.js"></script>
+
+  </head>
+  <body>
+     <div class="header">
+      <div class="logo_title">
+		  
+        <div class="title animated fadeInDown"><img id="img1" alt="logo" style="display:inline-block;" src="https://lilulula.github.io//images/avatar.png"/>
+<script>
+var r = 0;
+    window.onload = function(){
+        var current = 0;
+        document.getElementById('img1').onclick = function(){
+            current = (current+90)%360;
+            this.style.transform = 'rotate('+current+'deg)';
+        }
+    };
+</script>
+          <h1 title="碎碎念" class="weaklink"><a  href="/">碎碎念</a>
+
+          </h1>
+
+          <div class="navbar weaklink">
+            <div class="normal_nav">
+
+<div class="bitcron_nav_container">
+
+
+  <div class="bitcron_nav">
+    <div class="mixed_site_nav_wrap site_nav_wrap">
+		
+      <ul class="mixed_site_nav site_nav sm sm-base">
+	  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/post/about" class="selected active current nav__item" >关于</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="https://lulalilu.github.io//post/dou-ban-shu-ying-yin/" class="selected active current nav__item" >我的书影音</a>
+  </li>
+  
+ 
+ <li>
+
+      </ul>
+	  
+
+      <div class="clear clear_nav_inline_end"></div>
+
+<div class="search">
+<i class="search-icon fa fa-search search-start"></i>
+<input type="text" class="search-input" placeholder="Searching..." />
+<i class="search-icon fa fa-refresh search-clear"></i>
+<div class="search-results"></div>
+</div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="clear clear_nav_end"></div>
+
+</div>
+
+            </div>
+			
+			<div class="hamberger"><i class="fa fa-bars"></i>
+<i class="fa fa-times"></i>
+
+			</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hidden_nav animated fadeInDown">
+
+<div class="bitcron_nav_container">
+
+
+  <div class="bitcron_nav">
+    <div class="mixed_site_nav_wrap site_nav_wrap">
+      <ul class="mixed_site_nav site_nav sm sm-base">
+	
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/post/about" class="selected active current nav__item" >关于</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="https://lulalilu.github.io//post/dou-ban-shu-ying-yin/" class="selected active current nav__item" >我的书影音</a>
+
+  </li>
+
+
+
+
+      </ul>
+
+      <div class="clear clear_nav_inline_end"></div>
+    </div>
+
+  </div>
+
+
+
+  <div class="clear clear_nav_end"></div>
+
+</div>
+
+      </div>
+
+    </div>
+
+<style type="text/css">
+.search {
+    position: relative;
+    height: 30px;
+    text-align: right;
+    line-height: 30px;
+    padding-right: 10px;
+}
+
+.search .search-icon {
+    float: right;
+    height: 100%;
+    margin: 0 10px;
+    line-height: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.search .search-input {
+    float: right;
+    width: 30%;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.search .search-clear {
+    display: none;
+}
+
+.search .search-results {
+    display: block;
+    z-index: 1000;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    width: 50%;
+    max-height: 400px;
+    overflow: auto;
+    text-align: left;
+    border-radius: 5px;
+    box-shadow: 0 .3rem .5rem #333;
+}
+
+.search .search-results .result-item {
+    color: #000;
+    margin: 5px;
+    padding: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+</style>
+
+
+    <div class="main" id="pjax-container">
+      <div class="main-inner">
+<div class="content">
+<style>.toc{overflow-y:auto}.toc>.toc-list{overflow:hidden;position:relative}.toc>.toc-list li{list-style:none}.toc-list{margin:0;padding-left:10px}a.toc-link{color:currentColor;height:100%}.is-collapsible{max-height:1000px;overflow:hidden;transition:all 300ms ease-in-out}.is-collapsed{max-height:0}.is-position-fixed{position:fixed !important;top:0}.is-active-link{font-weight:700}.toc-link::before{background-color:#EEE;content:' ';display:inline-block;height:inherit;left:0;margin-top:-1px;position:absolute;width:2px}.is-active-link::before{background-color:#54BC4B}</style>
+  <div class="post_page" >
+<div class="post">
+  <div class="post_title sm_margin">
+    <h2><a>SQL必知必会笔记</a>
+    </h2>
+  </div>
+<script>
+function lan(){
+	if (document.getElementById("lan").innerText == "繁"){
+		var s=document.getElementById("tongwenlet_cn");
+		if(s != null){
+		document.body.removeChild(s);
+		}
+		var s = document.createElement("script");
+		s.language = "javascript";
+		s.type = "text/javascript";
+		s.src = "https://git.oschina.net/runningcheese/JiathisQR.js/raw/master/bookmarklet_tw.js";
+		s.id = "tongwenlet_cn";
+		document.body.appendChild(s);
+		document.getElementById("lan").innerHTML = "简"
+	}
+	else if(document.getElementById("lan").innerText == "簡"){
+		var s=document.getElementById("tongwenlet_cn");
+		if(s != null){
+		document.body.removeChild(s);
+		}
+		var s = document.createElement("script");
+		s.language = "javascript";
+		s.type = "text/javascript";
+		s.src = "https://git.oschina.net/runningcheese/JiathisQR.js/raw/master/bookmarklet_cn.js";
+		s.id = "tongwenlet_cn";
+		document.body.appendChild(s);
+		document.getElementById("lan").innerHTML = "繁"
+		}
+}
+
+function change(){	
+    var rand = Math.random()*1+1;
+    var num = window.getComputedStyle(document.getElementsByName("show")[0],undefined).fontSize;
+	num = num.slice(0,-2); 
+    document.getElementById("show").style.fontSize = num - rand +'px';
+}
+</script>
+  <div class="post_details">
+    <div class="info"><i class="fa fa-calendar"></i>
+<span class="date_info">2017-05-28</span>
+<i class="fa fa-eye"></i>
+<span class="date_info"><span id="busuanzi_value_page_pv"></span> Views</span>
+<i class="fa fa-bookmark-o"></i>
+<span class="tags_info weaklink">
+	
+	<a href="https://lilulula.github.io/tag/0ccGKuW3Q/" class="tag">数据分析</a>
+
+</span>
+<i class="fa fa-anchor"></i>
+<span style="margin-right:15px">
+3155字
+</span>
+<i class="fa fa-clock-o"></i>
+<span style="margin-right:15px">
+14 min read
+</span>
+<span style="margin-right:15px">
+<i class="fa fa-share"></i>
+<a title="QR code" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://lilulula.github.io/post/sql-bi-zhi-bi-hui-bi-ji-ban-yun-jiu-bo-ke/"><i class="fa fa-qrcode"></i></a>
+<a title="qq share" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lilulula.github.io/post/sql-bi-zhi-bi-hui-bi-ji-ban-yun-jiu-bo-ke/&sharesource=qzone&title=SQL必知必会笔记&pics=https://blog.blinkstar.cn/images/avatar.png&summary=&lt;blockquote&gt;
+&lt;p&gt;Sams Teach Yourself SQL in 10 Minutes - Fourth Edition&lt;br&gt;
+语句备份，方便查阅，SQL Server版本&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;检索数据&lt;/li&gt;
+&lt;li&gt;排序数据&lt;/li&gt;
+&lt;li&gt;过滤语句&lt;/li&gt;
+&lt;li&gt;模糊过滤&lt;/li&gt;
+&lt;li&gt;字段计算&lt;/li&gt;
+&lt;li&gt;函数&lt;/li&gt;
+&lt;li&gt;分组数据&lt;/li&gt;
+&lt;li&gt;嵌套查询&lt;/li&gt;
+&lt;li&gt;连接表&lt;/li&gt;
+&lt;li&gt;组合查询&lt;/li&gt;
+&lt;li&gt;插入数据&lt;/li&gt;
+&lt;li&gt;更新删除数据&lt;/li&gt;
+&lt;li&gt;创建和操纵类&lt;/li&gt;
+&lt;li&gt;使用视图&lt;/li&gt;
+&lt;li&gt;使用存储过程(批处理)&lt;/li&gt;
+&lt;li&gt;管理事务处理（transaction processing）&lt;/li&gt;
+&lt;li&gt;使用游标&lt;/li&gt;
+&lt;li&gt;高级SQL特性
+&lt;ul&gt;
+&lt;li&gt;约束&lt;/li&gt;
+&lt;li&gt;索引&lt;/li&gt;
+&lt;li&gt;触发器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+"><i class="fa fa-qq"></i></a>
+<a title="weibo share" target="_blank" href="https://service.weibo.com/share/share.php?url=https://lilulula.github.io/post/sql-bi-zhi-bi-hui-bi-ji-ban-yun-jiu-bo-ke/&sharesource=weibo&title=SQL必知必会笔记 + " - " + &lt;blockquote&gt;
+&lt;p&gt;Sams Teach Yourself SQL in 10 Minutes - Fourth Edition&lt;br&gt;
+语句备份，方便查阅，SQL Server版本&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;检索数据&lt;/li&gt;
+&lt;li&gt;排序数据&lt;/li&gt;
+&lt;li&gt;过滤语句&lt;/li&gt;
+&lt;li&gt;模糊过滤&lt;/li&gt;
+&lt;li&gt;字段计算&lt;/li&gt;
+&lt;li&gt;函数&lt;/li&gt;
+&lt;li&gt;分组数据&lt;/li&gt;
+&lt;li&gt;嵌套查询&lt;/li&gt;
+&lt;li&gt;连接表&lt;/li&gt;
+&lt;li&gt;组合查询&lt;/li&gt;
+&lt;li&gt;插入数据&lt;/li&gt;
+&lt;li&gt;更新删除数据&lt;/li&gt;
+&lt;li&gt;创建和操纵类&lt;/li&gt;
+&lt;li&gt;使用视图&lt;/li&gt;
+&lt;li&gt;使用存储过程(批处理)&lt;/li&gt;
+&lt;li&gt;管理事务处理（transaction processing）&lt;/li&gt;
+&lt;li&gt;使用游标&lt;/li&gt;
+&lt;li&gt;高级SQL特性
+&lt;ul&gt;
+&lt;li&gt;约束&lt;/li&gt;
+&lt;li&gt;索引&lt;/li&gt;
+&lt;li&gt;触发器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&pic="https://blog.blinkstar.cn/images/avatar.png"><i class="fa fa-weibo"></i></a>
+</span>
+<span style="margin-right:15px">
+<a id="daxiao" href="javascript:void(0);" onclick="change();" title="调整字体大小"><i class="fa fa-font"></i></a>
+</span>
+<span style="margin-right:15px">
+<a id="lan" href="javascript:void(0);" onclick="lan();" title="调整简繁体">繁</a>
+</span>
+</div>
+  </div>
+
+    <div class="post_content markdown">
+	
+	<img id="mememe" alt="featureimg" src="//source.unsplash.com/800x400/?arts,weather">
+	
+    <div name="show" id="show">
+	<p class="md_block"><span class="md_line md_line_start md_line_end"><blockquote>
+<p>Sams Teach Yourself SQL in 10 Minutes - Fourth Edition<br>
+语句备份，方便查阅，SQL Server版本</p>
+</blockquote>
+<ul>
+<li>检索数据</li>
+<li>排序数据</li>
+<li>过滤语句</li>
+<li>模糊过滤</li>
+<li>字段计算</li>
+<li>函数</li>
+<li>分组数据</li>
+<li>嵌套查询</li>
+<li>连接表</li>
+<li>组合查询</li>
+<li>插入数据</li>
+<li>更新删除数据</li>
+<li>创建和操纵类</li>
+<li>使用视图</li>
+<li>使用存储过程(批处理)</li>
+<li>管理事务处理（transaction processing）</li>
+<li>使用游标</li>
+<li>高级SQL特性
+<ul>
+<li>约束</li>
+<li>索引</li>
+<li>触发器</li>
+</ul>
+</li>
+</ul>
+<!-- more -->
+<h1 id="检索数据">检索数据</h1>
+<blockquote>
+<p>SELECT语句</p>
+</blockquote>
+<pre><code class="language-SQL">检索单个列
+SELECT column_name FROM tablename;
+
+检索多个列
+SELECT col_name1, col_name2 FROM tablename;
+
+检索所有列
+SELECT * from tablename;
+
+检索不同的值, 使用 DISTINCT关键词
+SELECT DISTINCT col_name1 FROM tablename;
+注意：DISTINCT关键字用于所有的列，不仅仅是跟在其后的那一列。
+
+返回前五行结果
+SELECT top 5 prod_name
+FROM Products
+
+使用注释
+----注释的方法---
+  /* 这是注释
+  的方法2 */
+</code></pre>
+<h1 id="排序数据">排序数据</h1>
+<blockquote>
+<p>ORDER BY 语句</p>
+</blockquote>
+<pre><code class="language-SQL">--注意：在指定一条ORDER BY子句时，应该保证它是SELECT语句中最后一条子句--
+SELECT col_name 
+FROM tablename 
+ORDER BY col_name
+
+--多列排序--
+SELECT col_name1, col_name2, col_name3 
+FROM tablename ORDER 
+BY col_name1, col_name2;
+
+--降序排列--
+SELECT col_name1, col_name2, col_name3 
+FROM tablename 
+ORDER BY col_name1 DESC, col_name2;
+
+</code></pre>
+<h1 id="过滤语句">过滤语句</h1>
+<blockquote>
+<p>WHERE 语句</p>
+</blockquote>
+<pre><code>SELECT col_name1, col_name2 FROM tablename WHERE col_name1 = 3.49;
+SELECT col_name, col_name2 FROM tablename WHERE co_name2 BETWEEN 5 AND 10;
+SELECT col_name FROM tablename WHERE col_name IS NULL;
+
+--AND语句---
+SELECT col_name1, col_name2, col_name3 
+FROM tablename 
+WHERE col_name1='ABC' AND col_name2 &lt;= 4
+
+--OR语句---
+SELECT col_name1, col_name2, col_name3 
+FROM tablename 
+WHERE col_name1='ABC' OR col_name2 &lt;= 4
+
+--注意：SQL在处理OR操作符前，优先处理AND操作符。使用圆括号即可解决此问题。
+SELECT prod_name, prod_price
+FROM Products
+WHERE (vend_id = 'DLL01' OR vend_id = ‘BRS01’) AND  prod_price &gt;= 10;
+
+--IN语句，与OR语句相当，但是速度更快，而且可以嵌套SELECT语句
+SELECT prod_name, prod_price 
+FROM Products 
+WHERE vend_in IN ('DLL01', 'BSLKJL') 
+ORDER BY prod_name;
+
+--NOT语句，与&lt;&gt;类似，但是可以与IN配合使用完成更为复杂的筛选--
+SELECT prod_name 
+FROM Products 
+WHERE NOT vend_id='DLL01' 
+ORDER BY prod_name;
+</code></pre>
+<h1 id="模糊过滤">模糊过滤</h1>
+<blockquote>
+<p>LIKE</p>
+</blockquote>
+<pre><code>---%表示任何字符出现任意次数,%还能匹配0个字符,注意：%不能匹配NULL;需要注意前后的空格---
+SELECT prod_id, pro_name FROM Products WHERE prod_name LIKE 'Fish%';
+SELECT prod_id, prod_name FROM Products WHERE prod_name LIKE '%bean bag%';+
+SELECT prod_id, prod_name FROM Products WHERE prod_name LIKE 'F%y';
+
+--下划线匹配单个字符--------------
+SELECT prodid, prodname 
+FROM Products
+WHERE prod_name LIKE '__inch teddy bear';
+
+--方括号[]匹配一个字符的可能选项，只有Access和SQL Server中才可以用--
+--例如匹配J或M开头的任意cust_contact--
+SELECT cust_contact
+FROM Customers
+WHERE cust_contact LIKE '[JM]%' 
+ORDER BY cust_contact
+
+--方括号通配符可以使用^来否定--
+SELECT cust_contact
+FROM Customers
+WHERE cust_contact LIKE '[^JM]%' 
+ORDER BY cust_contact
+
+--上面的例子可以直接用NOT来重写--
+SELECT cust_contact
+FROM Customers
+WHERE NOT cust_contact LIKE '[JM]%' 
+ORDER BY cust_contact
+
+</code></pre>
+<ul>
+<li>不要过度使用通配符。如果其他操作符能达到相同的目的，应该使用其他操作符。</li>
+<li>在确实需要使用通配符时，也尽量不要把它们用在搜索模式的开始处。把通配符置于开始处，搜索起来是最慢的。</li>
+<li>仔细注意通配符的位置。如果放错地方，可能不会返回想要的数据。</li>
+</ul>
+<h1 id="字段计算">字段计算</h1>
+<blockquote>
+<p>+号连接字段</p>
+</blockquote>
+<pre><code>--拼接字段--
+--Access和SQL  Server使用+号。DB2、Oracle、PostgreSQL、SQLite和Open Office Base使用||。详细请参阅具体的DBMS文档。
+--大多数DBMS都支持RT RIM()（正如刚才所见，它去掉字符串右边的空格）、LT RIM()（去掉字符串左边的空格）以及T RIM()（去掉字符串
+左右两边的空格）。
+SELECT RTRIM(vend_name)+'('+RTRIM(vend_country)+')' AS  vend_title
+FROM Vendors
+ORDER BY vend_name
+
+--字段之间加减乘除--
+SELECT prod_id, quantity, item_price, quantity*item_price AS expended_price 
+FROM OrderItems 
+WHERE order_num=20008;
+</code></pre>
+<h1 id="函数">函数</h1>
+<blockquote>
+<p>文本函数</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说 明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LEFT()</td>
+<td>返回字符串左边的字符</td>
+</tr>
+<tr>
+<td>LENGTH()</td>
+<td>返回字符串的长度</td>
+</tr>
+<tr>
+<td>LOWER()</td>
+<td>将字符串转为小写</td>
+</tr>
+<tr>
+<td>UPPER()</td>
+<td>将字符串转为大写</td>
+</tr>
+<tr>
+<td>LTRIM()</td>
+<td>去掉字符串左边的空格</td>
+</tr>
+<tr>
+<td>RIGHT()</td>
+<td>返回字符串右边的字符</td>
+</tr>
+<tr>
+<td>RTRIM()</td>
+<td>去掉字符串右边的空格</td>
+</tr>
+<tr>
+<td>SOUNDEX()</td>
+<td>返回字符串的SOUNDEX值</td>
+</tr>
+</tbody>
+</table>
+<pre><code>--找出发音类似的--
+SELECT cust_name,cust_contact
+FROM Customers
+where SOUNDEX(cust_contact)=SOUNDEX('Michael Green')
+
+</code></pre>
+<blockquote>
+<p>时间函数</p>
+</blockquote>
+<pre><code>SELECT order_num
+FROM Orders
+WHERE DATEPART(yy,order_date) = 2012
+</code></pre>
+<blockquote>
+<p>数值处理函数</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ABS()</td>
+<td>返回绝对值</td>
+</tr>
+<tr>
+<td>EXP()</td>
+<td>返回指数值</td>
+</tr>
+<tr>
+<td>PI()</td>
+<td>返回圆周率</td>
+</tr>
+<tr>
+<td>SQRT()</td>
+<td>返回平方根</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>聚集函数【AVG() COUNT()  MAX() MIN() SUM()】</p>
+</blockquote>
+<ul>
+<li>使用COUNT (*)对表中行的数目进行计数，不管表列中包含的是空值（NULL）还是非空值。</li>
+<li>使用COUNT (column)对特定列中具有值的行进行计数，忽略NULL值。</li>
+</ul>
+<pre><code>--求平均的时候要求不重复
+SELECT AVG(DISTINCT prod_price) AS avg_price
+FROM Products
+WHERE vend_id = 'DLL01';
+
+</code></pre>
+<h1 id="分组数据">分组数据</h1>
+<blockquote>
+<p>GROUP BY子句和HAVING子句</p>
+</blockquote>
+<pre><code>SELECT vend_id,COUNT(*) AS num_prods
+FROM Products
+GROUP BY vend_id
+
+--结果---
+vend_id	num_prods
+BRS01     	3
+DLL01     	4
+FNG01     	2
+</code></pre>
+<ul>
+<li>WHERE只能过滤行，而不是分组，分组过滤需要HAVING</li>
+</ul>
+<pre><code>SELECT vend_id,COUNT(*) AS num_prods
+FROM Products
+GROUP BY vend_id
+HAVING COUNT(*)&gt;2
+</code></pre>
+<h1 id="嵌套查询">嵌套查询</h1>
+<pre><code class="language-SQL">---------------------------------------
+SELECT cust_name,cust_contact
+FROM Customers
+WHERE cust_id IN (SELECT cust_id
+				  FROM Orders
+				  WHERE order_num IN (SELECT order_num 
+									  FROM OrderItems
+									  WHERE prod_id = 'RGAN01'));
+------------------------------------
+SELECT cust_name, cust_contact
+FROM Customers, Orders, OrderItems
+WHERE Customers.cust _id = Orders.cust _id
+AND  OrderItems.order_num = Orders.order_num
+AND  prod_id = 'RGAN01';
+------------------------------------
+SELECT cust_name,
+       cust_state,
+       (SELECT COUNT(*)
+        FROM Orders
+        WHERE Orders.cust_id = Customers.cust_id) AS orders
+FROM Customers		
+ORDER BY cust_name		  
+</code></pre>
+<h1 id="连接表">连接表</h1>
+<blockquote>
+<p>join</p>
+</blockquote>
+<pre><code class="language-SQL">------等值连接-----------
+SELECT vend_name,prod_name,prod_price
+FROM Vendors,Products  
+WHERE Vendors.vend_id = Products.vend_id
+
+
+------内连接-------------
+SELECT vend_name,prod_name,prod_price
+FROM Vendors INNER JOIN Products
+ON Vendors.vend_id = Products.vend_id
+------外连接---------------
+-INNER JOIN 产生的结果是AB的交集
+-LEFT [OUTER] JOIN 产生表A的完全集，而B表中匹配的则有值，没有匹配的则以null值取代。
+-RIGHT [OUTER] JOIN 产生表B的完全集，而A表中匹配的则有值，没有匹配的则以null值取代。
+-FULL [OUTER] JOIN 产生A和B的并集。对于没有匹配的记录，则会以null做为值。
+
+SELECT vend_name,prod_name,prod_price
+FROM Vendors LEFT OUTER JOIN Products
+ON Vendors.vend_id = Products.vend_id
+
+SELECT vend_name,prod_name,prod_price
+FROM Vendors RIGHT OUTER JOIN Products
+ON Vendors.vend_id = Products.vend_id
+-------表别名-------------
+SELECT cust_name,cust_contact
+FROM Customers AS C ,Orders AS O,OrderItems AS OI
+WHERE  C.cust_id = O.cust_id AND OI.order_num = O.order_num AND prod_id = 'RGAN01';
+</code></pre>
+<pre><code>--这个例子使用左外部联结来包含所有顾客，甚至包含那些没有任何订单的顾客。
+SELECT Customers.cust_id,
+COUNT(Orders.order_num) AS  num_ord
+FROM Cust omers LEFT OUTER JOIN  Orders
+ON  Customers.cust _id = Orders.cust _id
+GROUP BY Customers.cust _id;
+</code></pre>
+<h1 id="组合查询">组合查询</h1>
+<blockquote>
+<p>UNION函数<br>
+直接在两条SELECT语句之间，将结果合并在一起，类似在WHERE中使用OR函数，UNION会默认去除重复数据，UNION ALL不去除重复数据。ORDER BY函数必须放在最后一个SELECT语句中，并作用于最后的合并结果</p>
+</blockquote>
+<h1 id="插入数据">插入数据</h1>
+<blockquote>
+<p>INSERT INTO 按照列名来可以重复使用，可以只插入部分数据，</p>
+</blockquote>
+<pre><code class="language-SQL">------插入一行数据------------
+INSERT INTO Customers(cust_id, 
+cust_name, 
+cust_city,
+cust_state, 
+cust_zip, 
+cust_country, 
+cust_contact, 
+cust_email)
+VALUES('1000000001', 
+'Village Toys',
+ '200 Maple Lane', 
+ 'Detroit',
+ 'MI', 
+ 'USA',
+ 'John Smith',
+ 'sales@villagetoys.com');
+</code></pre>
+<pre><code class="language-SQL">-----插入SELECT结果，只关注顺序，不关注筛选出的字段名-------
+INSERT INTO Customers(cust_id,
+                      cust_contact ,
+                      cust_email,
+                      cust_name,
+                      cust_address,
+                      cust_city ,
+                      cust_state,
+                      cust_zip,
+                      cust_country )
+SELECT cust_id,
+       cust_contact ,
+       cust_email,
+       cust_name,
+       cust_address,
+       cust_city ,
+       cust_state,
+       cust_zip,
+       cust_country
+FROM CustNew;
+</code></pre>
+<pre><code class="language-SQL">-----从一个表复制到另一个表-------
+SELECT *
+INTO CustCopy
+FROM Customers
+
+</code></pre>
+<h1 id="更新删除数据">更新删除数据</h1>
+<blockquote>
+<p>UPDATE  DELETE</p>
+</blockquote>
+<pre><code>----更新指定行-------------
+UPDATE Customers
+SET cust_contact  = 'Sam Roberts',
+    cust_email = 'sam@toyland.com'
+WHERE cust_id = '1000000006';
+------删除指定行--------
+DELETE FROM Cust omers
+WHERE cust_id = '1000000006';
+--DELETE只能删除行，删除列则用update
+--删除表中的所有数据TRUNCATE TABLE速度更快
+</code></pre>
+<h1 id="创建和操纵类">创建和操纵类</h1>
+<pre><code class="language-SQL">----创建表-------------
+CREATE TABLE Products
+(
+  prod_id    char(10)      NOT NULL ,
+  vend_id    char(10)      NOT NULL ,
+  prod_name  char(255)     NOT NULL ,
+  prod_price decimal(8,2)  DEFAULT 1,
+  prod_desc  varchar(1000) NULL 
+);
+</code></pre>
+<pre><code>------更新表---------
+ALTER  TABLE Vendos
+ADD vend_phone CHAR(20);
+ALTER  TABLE Vendos
+DROP COULUMN vend_phone;
+</code></pre>
+<pre><code>----删除表-------
+DROP TABLE CustCopy ;
+</code></pre>
+<ul>
+<li>每个DBMS对表重命名的支持有所不同。对于这个操作，不存在严格的标准。DB2、MariaDB、My SQL、Oracle和PostgreSQL用户使<br>
+用RENAME语句，SQL  Server用户使用sp_rename存储过程，SQLite用户使用ALTER TABLE语句。</li>
+</ul>
+<h1 id="使用视图">使用视图</h1>
+<blockquote>
+<p>CREATE  VIEW viewname</p>
+</blockquote>
+<ul>
+<li>视图是虚拟的表</li>
+<li>视图可以重用SQL语句</li>
+<li>可以简化复杂SQL操作，在编写查询后，可以方便重用它，而不必知道其查询的细节</li>
+<li>使用表的一部分而不是整个表</li>
+<li>保护数据</li>
+<li>更改数据的表现格式</li>
+<li>视图不包含数据，每次使用的时候都会重新检索，因此如果特别复杂的SQL查询性能会下降的很厉害。</li>
+</ul>
+<pre><code class="language-SQL">---创建视图------
+CREATE VIEW ProductCustomers AS
+SELECT cust_name,cust_contact,prod_id
+FROM Customers,Orders,OrderItems
+WHERE Customers.cust_id = Orders.cust_id AND OrderItems.order_item = Orders.order_num
+---查看视图-----------
+--这条语句创建一个名为ProductCustomers的视图，它联结三个表，返回已订购了任意产品的所有顾客的列表。
+SELECT * FROM ProductCustomers
+--检索订购了产品RGA N01的顾客
+SELECT * FROM ProductCustomers
+WHERE prod_id = 'RGAN01'
+----用视图重新格式化检索数据------
+CREATE VIEW VendorLocations AS
+SELECT RTRIM(vend_name)+'('+RTRIM(vend_country)+')' AS  vend_title
+FROM Vendors
+
+</code></pre>
+<h1 id="使用存储过程批处理">使用存储过程(批处理)</h1>
+<pre><code class="language-SQL">CREATE PROCEDURE MailingListCount
+AS
+DECLARE @cnt INTEGER
+SELECT @cnt = COUNT(*)
+FROM Customers
+WHERE NOT cust_email IS NULL
+RETURN @cnt
+
+DECLARE @ReturnValue INT
+EXECUTE @ReturnValue=MailingListCount;
+SELECT @ReturnValue
+</code></pre>
+<ul>
+<li>在Orders表中插入一个新订单</li>
+</ul>
+<pre><code>CREATE PROCEDURE NewOrder @cust_id CHAR(10)
+AS
+--Declare variable for order number
+DECLARE @order_num INTEGER
+--Get current highest order number
+SELECT @order_num = MAX(order_num)
+FROM Orders
+--Determine next order number
+SELECT @order_num = @order_num+1
+--Insert new order
+INSERT INTO Orders(order_num,order_date,cust_id)
+VALUES(@order_num,GETDATE(),@cust_id)
+--Return order number
+RETURN @order_num;
+</code></pre>
+<ul>
+<li>此存储过程在O rders表中创建一个新订单。它只有一个参数，即下订单顾客的I D。订单号和订单日期这两列在存储过程中自动生成。代码首先声明一个局部变量来存储订单号。接着，检索当前最大订单号（使用MA X()函数）并增加1（使用SELECT 语句）。然后用INSERT 语句插入由新生成的订单号、当前系统日期（用GET DA T E()函数检索）和传递的顾客I D组成的订单。最后，用RET U RN @order_num返回订单号（处理订单物品需要它）。请注意，此代码加了注释，在编写存储过程时应该多加注释</li>
+</ul>
+<pre><code>CREATE PROCEDURE NewOrder @cust_id CHAR(10)
+AS
+--Insert new order
+INSERT INFO Orders(cust_id)
+VALUES(@cust_id)
+--Return order number
+SELECT order_num = @@IDENTITY
+</code></pre>
+<ul>
+<li>此存储过程也在Orders表中创建一个新订单。这次由DBMS生成订单号。大多数DBMS都支持这种功能；SQL  Serv er中称这些自动增量的列为标识字段（i den t i t y   f i el d），而其他DBMS称之为自动编号（au t o  n u mber）或序列（sequ en ce）。传递给此过程的参数也是一个，即下订单的顾客ID。订单号和订单日期没有给出，DBMS对日期使用默认值（GETDATE()函数），订单号自动生成。怎样才能得到这个自动生成的I D？在SQL  Serv er上可在全局变量@@IDENT ITY 中得到，它返回到调用程序（这里使用SELECT 语句）。</li>
+</ul>
+<h1 id="管理事务处理transaction-processing">管理事务处理（transaction processing）</h1>
+<blockquote>
+<p>COMMIT 和ROLLBACK语句</p>
+</blockquote>
+<ul>
+<li>事务处理是通过确保成批SQL操作要么完全执行，要么完全不执行</li>
+<li>在使用事务处理时，有几个反复出现的关键词。下面是关于事务处理需要知道的几个术语：</li>
+</ul>
+<ol>
+<li>事务（transaction ）指一组SQL语句；</li>
+<li>回退（rollback）指撤销指定SQL语句的过程；</li>
+<li>提交（commit）指将未存储的SQL语句结果写入数据库表；</li>
+<li>保留点（savepoint）指事务处理中设置的临时占位符（pl aceholder），可以对它发布回退（与回退整个事务处理不同）。</li>
+</ol>
+<pre><code class="language-SQL">BEGINT RANSACTION
+INSERT INTO Customers(cust_id,cust_name)
+VALUES('1000000010','ToysEmporium');
+--定义保存点
+SAVE TRANSACTION StartOrder;
+INSERT INTO Orders(order_num,order_date,cust_id)
+VALUES(20100,'2001/12/1','1000000010');
+--若执行不成功就回退到保存点
+IF @@ERROR&lt;&gt;0 ROLLBACK TRANSACTION StartOrder;
+INSERT INTO OrderItems(order_num,order_item,prod_id,quantity,item_price)
+VALUES(20100,1,'BR01',100,5.49);
+IF @@ERROR&lt;&gt;0 ROLLBACK TRANSACTION StartOrder;
+INSERT INTO OrderItems(order_num,order_item,prod_id,quantity,item_price)
+VALUES(20100,2,'BR03',100,10.99);
+IF @@ERROR&lt;&gt;0 ROLLBACK TRANSACTION StartOrder;
+COMMIT TRANSACTION
+</code></pre>
+<h1 id="使用游标">使用游标</h1>
+<pre><code>--创建游标
+--在上面两个版本中，DECLA RE语句用来定义和命名游标，这里为CustCursor。SELECT 语句定义一个包含没有电子邮件地址（NU LL值）的所有
+顾客的游标。
+DECLARE CustCursor CURSOR
+FOR
+SELECT * FROM Customers
+WHERE cust_email is NULL
+---------------------
+DECLARE @cust_id CHAR(10),
+        @cust_name CHAR(50),
+        @cust_address CHAR(50),
+        @cust_city CHAR(50),
+        @cust_state CHAR(5),
+        @cust_zip CHAR(10),
+        @cust_country CHAR(50),
+        @cust_contact CHAR(50),
+        @cust_email CHAR(255)
+OPEN CustCursor
+FETCH NEXT FROM CustCursor
+INTO @cust_id,@cust_name,@cust_address,
+     @cust_city,@cust_state,@cust_zip,
+     @cust_country,@cust_contact,@cust_email
+WHILE @@FETCH_STATUS=0
+BEGIN
+    --占位符
+FETCH NEXT FROM CustCursor
+	INTO @cust_id,@cust_name,@cust_address,
+         @cust_city,@cust_state,@cust_zip,
+         @cust_country,@cust_contact,@cust_email
+END
+CLOSE CustCursor
+DEALLOCATE  CustCursor
+</code></pre>
+<ul>
+<li>在此例中，为每个检索出的列声明一个变量，FET CH语句检索一行并保存值到这些变量中。使用WHILE循环处理每一行，条件WHILE @@FET CH_ST A T U S = 0在取不出更多的行时终止处理（退出循环）。这个例子也不进行具体的处理，实际代码中，应该用具体的处理代码替换其中的…占位符。</li>
+</ul>
+<h1 id="高级sql特性">高级SQL特性</h1>
+<h2 id="约束">约束</h2>
+<h2 id="索引">索引</h2>
+<h2 id="触发器">触发器</h2>
+</span></p></div><div id = "warn"></div>
+	<br>
+	<hr>
+<div style="color: #ccc;font-size:14px;"><i class="fa fa-user"></i>本文由<a rel="license" href="/">碎碎念</a>创作</div>	
+<div style="color: #ccc;font-size:14px;"><i class="fa fa-cc"></i>该文章采用<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。转载请注明出处！</div>
+<div style="color: #ccc;font-size:14px;"><i class="fa fa-clock-o"></i>发布时间为：2017-05-28</div>   
+
+</div>
+</div>
+
+<style type="text/css">
+#mememe {
+	border:3px;
+	border-radius:5px;
+    background-repeat: no-repeat;
+    height: 100%;
+	width: 100%;
+	display: inline-block;
+	border-radius:5px; 
+}
+</style>
+
+<div style="width:100%;overflow:hidden">
+
+
+
+          <div style="float:left;text-align:left;color:#ccc;font-size:18px;width:50%;">
+            上一篇
+            <a href="https://lilulula.github.io/post/di-tu-dao-hang-chan-pin-fen-xi-bao-gao-201707/">
+              <p class="post-title">
+                <b>地图导航产品分析报告</b>
+              </p>
+            </a>
+          </div>
+
+</div>
+
+<div class="doc_comments">
+
+</div>
+<script>
+var link="";$("img").each((i,o)=>{var o=$(o);if(o.attr("src").indexOf("sinaimg")>0||o.attr("src").indexOf("qpic")>0||o.attr("src").indexOf("baidu")>0||o.attr("src").indexOf("sinaimg")>0){o.attr("referrerpolicy","no-referrer");link=o.attr("src");o.attr("src",link);}});
+imgList = document.querySelectorAll('img')
+imgList.forEach(img => {
+  if (img.alt !== "logo" && img.alt !== "featureimg"){
+  let div1 = document.createElement('div')
+  let div = document.createElement('div')
+  div.className='back';
+  div.setAttribute("data-src",img.src)
+  var figuration = document.createElement("figcaption")
+  figuration.innerHTML = '<a href="' + img.src + '">' + img.alt + '</a>'
+  img.replaceWith(div1)
+  div1.appendChild(div)
+  div.appendChild(img)
+  div1.appendChild(figuration)}
+})
+$('img').on('error',function(){$(this).prop('src','https://lilulula.github.io//media/images/broken.jpg')});$("a").attr("rel","external nofollow");$("a[rel='external nofollow']").attr("target","_blank");$("a[href^='#']").removeAttr("target");$("a.ex").removeAttr("rel");$("a.ex").removeAttr("target");
+content="<div class='warn'>本文最后更新于2017-05-28，已超过 1 年没有更新，涉及的内容可能已经失效！</div>";var date1="2017-05-28 15:04:44";date1=date1.replace("-","/");var date2=new Date();var date3=date2.getTime()-new Date(date1).getTime();var days=Math.floor(date3/(24*3600*1000));if(days>=365){document.getElementById("warn").innerHTML=content};
+$('#pjax-container').lightGallery({
+    selector: '.back'
+});
+tocbot.init({
+	tocSelector: '.toc',
+	contentSelector: '.main-inner',
+	headingSelector: 'h1, h2, h3, h4, h5',
+	positionFixedSelector: ".toc",
+	scrollSmooth: true,
+	fixedSidebarOffset: 'auto',
+    scrollSmoothOffset: -80,
+    headingsOffset: -500
+});
+</script>
+  </div>
+</div>
+
+
+      </div>
+<div class="toc-container">
+<ul class="markdownIt-TOC">
+<li><a href="#%E6%A3%80%E7%B4%A2%E6%95%B0%E6%8D%AE">检索数据</a></li>
+<li><a href="#%E6%8E%92%E5%BA%8F%E6%95%B0%E6%8D%AE">排序数据</a></li>
+<li><a href="#%E8%BF%87%E6%BB%A4%E8%AF%AD%E5%8F%A5">过滤语句</a></li>
+<li><a href="#%E6%A8%A1%E7%B3%8A%E8%BF%87%E6%BB%A4">模糊过滤</a></li>
+<li><a href="#%E5%AD%97%E6%AE%B5%E8%AE%A1%E7%AE%97">字段计算</a></li>
+<li><a href="#%E5%87%BD%E6%95%B0">函数</a></li>
+<li><a href="#%E5%88%86%E7%BB%84%E6%95%B0%E6%8D%AE">分组数据</a></li>
+<li><a href="#%E5%B5%8C%E5%A5%97%E6%9F%A5%E8%AF%A2">嵌套查询</a></li>
+<li><a href="#%E8%BF%9E%E6%8E%A5%E8%A1%A8">连接表</a></li>
+<li><a href="#%E7%BB%84%E5%90%88%E6%9F%A5%E8%AF%A2">组合查询</a></li>
+<li><a href="#%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE">插入数据</a></li>
+<li><a href="#%E6%9B%B4%E6%96%B0%E5%88%A0%E9%99%A4%E6%95%B0%E6%8D%AE">更新删除数据</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BA%E5%92%8C%E6%93%8D%E7%BA%B5%E7%B1%BB">创建和操纵类</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E8%A7%86%E5%9B%BE">使用视图</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E6%89%B9%E5%A4%84%E7%90%86">使用存储过程(批处理)</a></li>
+<li><a href="#%E7%AE%A1%E7%90%86%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86transaction-processing">管理事务处理（transaction processing）</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E6%B8%B8%E6%A0%87">使用游标</a></li>
+<li><a href="#%E9%AB%98%E7%BA%A7sql%E7%89%B9%E6%80%A7">高级SQL特性</a>
+<ul>
+<li><a href="#%E7%BA%A6%E6%9D%9F">约束</a></li>
+<li><a href="#%E7%B4%A2%E5%BC%95">索引</a></li>
+<li><a href="#%E8%A7%A6%E5%8F%91%E5%99%A8">触发器</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+    </div>
+	
+   <div class="footer">
+<div class="site_footer_wrap"><div class="site_footer">
+
+      <div class="mysocials"><div class="my_socials">
+		   
+			   
+    
+			   
+    
+			   
+    
+			   
+    
+			   
+    
+			   
+    
+</div>
+      </div>
+
+      <div class="copyright" id="copyright">
+	  <script>
+		var date=new Date;
+		var year=date.getFullYear(); 
+		document.write("Copyright © "+year+" " + "碎碎念. ");
+		</script>
+		Powered by lula.
+		<br>
+		本站已稳定运行了
+		<strong><script type="text/javascript">
+		var urodz= new Date("08/27/2016");
+		var now = new Date();
+		var ile = now.getTime() - urodz.getTime();
+		var dni = Math.floor(ile / (1000 * 60 * 60 * 24));
+		document.write(+dni)
+		</script>
+		</strong>天
+		<br>
+		本站总访问量为 <strong><span id="busuanzi_value_site_uv"></span></strong> 次
+	  
+      </div>
+	  <img src="https://lilulula.github.io//media/images/font.svg">
+
+    </div>
+
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/love.js"></script>
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/darkmode.js"></script>
+<script>
+var options = {
+  bottom: '64px', // default: '32px'
+  right: '32px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: false, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+
+//const darkmode = new Darkmode(options);
+//darkmode.showWidget();
+
+</script>
+<script>
+hljs.initHighlightingOnLoad();
+</script>
+
+</body>
+
+</html>

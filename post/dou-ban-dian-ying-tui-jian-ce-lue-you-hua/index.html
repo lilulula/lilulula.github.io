@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+  <head lang="zh">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta name="renderer" content="webkit">
+<meta name="description" content="Memory is important">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+<title>豆瓣电影推荐策略优化 | 碎碎念</title>
+<link href="https://lilulula.github.io//styles/main.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/KaTeX/0.10.2/katex.min.css"/>
+<script src="//cdn.bootcss.com/KaTeX/0.10.2/katex.min.js"></script>
+<script src="//cdn.bootcss.com/KaTeX/0.10.2/contrib/auto-render.min.js"></script>
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/jquery.js"></script>
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/jquery.pjax.min.js"></script>
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/basic.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+<script async type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script async type="text/javascript" src="https://lilulula.github.io//media/scripts/search.js"></script>
+
+<script type="text/javascript" src="https://lilulula.github.io//media/js/lightgallery.min.js"></script>
+<script src="https://cdn.bootcss.com/tocbot/4.8.1/tocbot.js"></script>
+
+  </head>
+  <body>
+     <div class="header">
+      <div class="logo_title">
+		  
+        <div class="title animated fadeInDown"><img id="img1" alt="logo" style="display:inline-block;" src="https://lilulula.github.io//images/avatar.png"/>
+<script>
+var r = 0;
+    window.onload = function(){
+        var current = 0;
+        document.getElementById('img1').onclick = function(){
+            current = (current+90)%360;
+            this.style.transform = 'rotate('+current+'deg)';
+        }
+    };
+</script>
+          <h1 title="碎碎念" class="weaklink"><a  href="/">碎碎念</a>
+
+          </h1>
+
+          <div class="navbar weaklink">
+            <div class="normal_nav">
+
+<div class="bitcron_nav_container">
+
+
+  <div class="bitcron_nav">
+    <div class="mixed_site_nav_wrap site_nav_wrap">
+		
+      <ul class="mixed_site_nav site_nav sm sm-base">
+	  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/post/about" class="selected active current nav__item" >关于</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="https://lulalilu.github.io//post/dou-ban-shu-ying-yin/" class="selected active current nav__item" >我的书影音</a>
+  </li>
+  
+ 
+ <li>
+
+      </ul>
+	  
+
+      <div class="clear clear_nav_inline_end"></div>
+
+<div class="search">
+<i class="search-icon fa fa-search search-start"></i>
+<input type="text" class="search-input" placeholder="Searching..." />
+<i class="search-icon fa fa-refresh search-clear"></i>
+<div class="search-results"></div>
+</div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="clear clear_nav_end"></div>
+
+</div>
+
+            </div>
+			
+			<div class="hamberger"><i class="fa fa-bars"></i>
+<i class="fa fa-times"></i>
+
+			</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hidden_nav animated fadeInDown">
+
+<div class="bitcron_nav_container">
+
+
+  <div class="bitcron_nav">
+    <div class="mixed_site_nav_wrap site_nav_wrap">
+      <ul class="mixed_site_nav site_nav sm sm-base">
+	
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/post/about" class="selected active current nav__item" >关于</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="https://lulalilu.github.io//post/dou-ban-shu-ying-yin/" class="selected active current nav__item" >我的书影音</a>
+
+  </li>
+
+
+
+
+      </ul>
+
+      <div class="clear clear_nav_inline_end"></div>
+    </div>
+
+  </div>
+
+
+
+  <div class="clear clear_nav_end"></div>
+
+</div>
+
+      </div>
+
+    </div>
+
+<style type="text/css">
+.search {
+    position: relative;
+    height: 30px;
+    text-align: right;
+    line-height: 30px;
+    padding-right: 10px;
+}
+
+.search .search-icon {
+    float: right;
+    height: 100%;
+    margin: 0 10px;
+    line-height: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.search .search-input {
+    float: right;
+    width: 30%;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.search .search-clear {
+    display: none;
+}
+
+.search .search-results {
+    display: block;
+    z-index: 1000;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    width: 50%;
+    max-height: 400px;
+    overflow: auto;
+    text-align: left;
+    border-radius: 5px;
+    box-shadow: 0 .3rem .5rem #333;
+}
+
+.search .search-results .result-item {
+    color: #000;
+    margin: 5px;
+    padding: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+</style>
+
+
+    <div class="main" id="pjax-container">
+      <div class="main-inner">
+<div class="content">
+<style>.toc{overflow-y:auto}.toc>.toc-list{overflow:hidden;position:relative}.toc>.toc-list li{list-style:none}.toc-list{margin:0;padding-left:10px}a.toc-link{color:currentColor;height:100%}.is-collapsible{max-height:1000px;overflow:hidden;transition:all 300ms ease-in-out}.is-collapsed{max-height:0}.is-position-fixed{position:fixed !important;top:0}.is-active-link{font-weight:700}.toc-link::before{background-color:#EEE;content:' ';display:inline-block;height:inherit;left:0;margin-top:-1px;position:absolute;width:2px}.is-active-link::before{background-color:#54BC4B}</style>
+  <div class="post_page" >
+<div class="post">
+  <div class="post_title sm_margin">
+    <h2><a>豆瓣电影推荐策略优化</a>
+    </h2>
+  </div>
+<script>
+function lan(){
+	if (document.getElementById("lan").innerText == "繁"){
+		var s=document.getElementById("tongwenlet_cn");
+		if(s != null){
+		document.body.removeChild(s);
+		}
+		var s = document.createElement("script");
+		s.language = "javascript";
+		s.type = "text/javascript";
+		s.src = "https://git.oschina.net/runningcheese/JiathisQR.js/raw/master/bookmarklet_tw.js";
+		s.id = "tongwenlet_cn";
+		document.body.appendChild(s);
+		document.getElementById("lan").innerHTML = "简"
+	}
+	else if(document.getElementById("lan").innerText == "簡"){
+		var s=document.getElementById("tongwenlet_cn");
+		if(s != null){
+		document.body.removeChild(s);
+		}
+		var s = document.createElement("script");
+		s.language = "javascript";
+		s.type = "text/javascript";
+		s.src = "https://git.oschina.net/runningcheese/JiathisQR.js/raw/master/bookmarklet_cn.js";
+		s.id = "tongwenlet_cn";
+		document.body.appendChild(s);
+		document.getElementById("lan").innerHTML = "繁"
+		}
+}
+
+function change(){	
+    var rand = Math.random()*1+1;
+    var num = window.getComputedStyle(document.getElementsByName("show")[0],undefined).fontSize;
+	num = num.slice(0,-2); 
+    document.getElementById("show").style.fontSize = num - rand +'px';
+}
+</script>
+  <div class="post_details">
+    <div class="info"><i class="fa fa-calendar"></i>
+<span class="date_info">2020-04-03</span>
+<i class="fa fa-eye"></i>
+<span class="date_info"><span id="busuanzi_value_page_pv"></span> Views</span>
+<i class="fa fa-bookmark-o"></i>
+<span class="tags_info weaklink">
+	
+	<a href="https://lilulula.github.io/tag/2mDZ8v3Gl/" class="tag">产品</a>
+
+</span>
+<i class="fa fa-anchor"></i>
+<span style="margin-right:15px">
+1614字
+</span>
+<i class="fa fa-clock-o"></i>
+<span style="margin-right:15px">
+6 min read
+</span>
+<span style="margin-right:15px">
+<i class="fa fa-share"></i>
+<a title="QR code" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://lilulula.github.io/post/dou-ban-dian-ying-tui-jian-ce-lue-you-hua/"><i class="fa fa-qrcode"></i></a>
+<a title="qq share" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lilulula.github.io/post/dou-ban-dian-ying-tui-jian-ce-lue-you-hua/&sharesource=qzone&title=豆瓣电影推荐策略优化&pics=https://blog.blinkstar.cn/images/avatar.png&summary="><i class="fa fa-qq"></i></a>
+<a title="weibo share" target="_blank" href="https://service.weibo.com/share/share.php?url=https://lilulula.github.io/post/dou-ban-dian-ying-tui-jian-ce-lue-you-hua/&sharesource=weibo&title=豆瓣电影推荐策略优化 + " - " + &pic="https://blog.blinkstar.cn/images/avatar.png"><i class="fa fa-weibo"></i></a>
+</span>
+<span style="margin-right:15px">
+<a id="daxiao" href="javascript:void(0);" onclick="change();" title="调整字体大小"><i class="fa fa-font"></i></a>
+</span>
+<span style="margin-right:15px">
+<a id="lan" href="javascript:void(0);" onclick="lan();" title="调整简繁体">繁</a>
+</span>
+</div>
+  </div>
+
+    <div class="post_content markdown">
+	
+	<img id="mememe" alt="featureimg" src="//source.unsplash.com/800x400/?arts,weather">
+	
+    <div name="show" id="show">
+	<p class="md_block"><span class="md_line md_line_start md_line_end"><h4 id="问题豆瓣电影的网页喜欢这部电影的人也喜欢模块的策略优化">问题：豆瓣电影的网页「喜欢这部电影的人也喜欢」模块的策略优化</h4>
+<ol>
+<li>推荐模块的理想态：帮助用户发现「想看」的电影</li>
+<li>衡量指标：推荐列表的用户点击率（感兴趣）；点击后标记想看的比例（想看）</li>
+<li>需求理解：
+<ol>
+<li>用户想看电影的影响因素（用户偏好，电影特征，其他用户相关行为）</li>
+<li>喜欢XX的人也喜欢其实本质上是相关推荐，也就是每个电影本身与另外一部电影的相关性，被同一个用户都标记为喜欢的比例。</li>
+</ol>
+</li>
+<li>阶段性调研：抽取我自己最近看的一些10部电影查看推荐列表分析是否满足我的需求，没有能引发我进一步标记想看的推荐列表。如果在内部可以抽取推荐列表中用户点击和未点击的进行对比。</li>
+<li>推测现有的推荐策略逻辑</li>
+</ol>
+<ul>
+<li>用户特征：未采用；是否登陆账号并不影响推荐结果（豆瓣竟然不是个性化推荐！一个比较大的Bug是没有引入这个导致有些类别推荐的电影我都看过了）</li>
+<li>电影类别：强特征；基本上推荐的10部均为同类型电影</li>
+<li>电影标签：强特征；其实用户标签本身就包含了其他认为抽象特征的，具有很强的相关性</li>
+<li>导演名称：中特征；部分电影推荐的同导演的电影有些并未排到特别靠前</li>
+<li>电影时间：弱特征；部分老电影推荐的时间跨度也比较大</li>
+<li>国家：弱特征；没有看出来特别强的相关性，不太确定是否有关联</li>
+<li>评分/评分人数：这个有些意外，基本上推荐的都是评分正负1之内的，所以啊看好电影才会推荐好电影啊</li>
+<li>豆列：弱特征；尝试的几个没找到相同豆列，可能电影比较冷门</li>
+</ul>
+<ol start="6">
+<li>
+<p>推测未达到理想态原因（扩充量与用户点击数据，可以给出每种原因的占比和解法）</p>
+<ol>
+<li>推荐电影已经标记过（看过/想看/在看），没有推荐意义</li>
+<li>用户自定义的标签特征过大时带来推荐宽泛无相关性，如大部分重合标签为剧情/中国等等</li>
+<li>推荐电影之间的差异度，有些推荐出现系列电影123推荐</li>
+<li>展示环节：只有海报和名称，信息本身不足以吸引我进一步点击</li>
+</ol>
+</li>
+<li>
+<p>针对性解决方案建议</p>
+<ol>
+<li>引入用户特征：标记过的电影不再推荐出来，引入与之前标记打分的电影相关分析</li>
+<li>引入用户偏好：根据用户画像中对于类型 电影 演员的偏好打分</li>
+<li>电影特征挖掘：从电影本身提取更丰富的标签信息；规范化用户新增标签系统</li>
+<li>推荐内容差异化控制：相同系列电影或重复的类目标签进行标注</li>
+<li>推荐样式优化：增加展示片名和推荐原因（如导演演员评论等等）</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h4 id="引申的思考-如何发现更多内容">引申的思考-如何发现更多内容</h4>
+<ol>
+<li>书影音模块满足的最核心需求就是：发现想看的书/影/音，记录自己看过的内容和评价；其中第一个需求发现有两个途径：搜索和推荐，搜索多是带有目的性，而推荐则是在目的不明确的情况下去发现。</li>
+<li>想起来自己开始喜欢上看电影是在B站资源丰富的年代，看每一个冷门电影都会有弹幕介绍，会有很多热心人在片尾推荐喜欢这部的人可以去看看XXX，然后是简短的推荐原因。</li>
+<li>而这个痛点目前满足的怎么样呢？虽然有很多公号微博资讯在推荐电影书，但是如何做到真正的个性化！其实打开豆瓣「佳片推荐」小组可以看到大家的各种推荐需求：
+<ol>
+<li>求推荐高智商女主的电影</li>
+<li>让你真正感受到女性魅力的电影</li>
+<li>教师相关的电影</li>
+<li>黑色幽默片</li>
+<li>类似《调音师》一样的惊悚恐怖电影</li>
+<li>求推荐实质上是悲剧的喜剧电影</li>
+<li>有哪些灵魂互换题材的电影</li>
+<li>有没有高甜无虐点的剧推荐</li>
+</ol>
+</li>
+</ol>
+<h4 id="豆瓣做了哪些优化呢">豆瓣做了哪些优化呢</h4>
+<p>网页版的推荐效果应该不是很好，但是19年看到了豆瓣几次改版在做这方面的优化</p>
+<ol>
+<li>
+<p>搜索策略优化：</p>
+<ol>
+<li>内容扩展：综合，书影音，小组，日记，用户均支持搜索，当然还是不会支持广播搜索</li>
+<li>界面扩展：默认页面不再是只有历史记录，增加热搜排行，小组话题等</li>
+</ol>
+</li>
+<li>
+<p>推荐策略优化（APP端优化）</p>
+<ol>
+<li>喜欢这部电影的人也喜欢</li>
+</ol>
+<ul>
+<li>展示电影评分信息方便选择</li>
+<li>前置点击操作想看，看过的会把推荐标记为「看过」（有点纳闷为什么会推荐看过的电影，推测可能是强化用户标记的成就感）<br>
+<img src="https://lilulula.github.io//post-images/1585894455114.jpeg" alt="" loading="lazy"></li>
+</ul>
+<ol start="2">
+<li>
+<p>电影首页为你推荐（个性化推荐）</p>
+<ul>
+<li>片单推荐（温情片/文艺片/法国电影）～ 运营编辑的类型推荐</li>
+<li>电影推荐（海报+电影剧照+评分+推荐评论+推荐原因标签）</li>
+<li>想看操作前置</li>
+<li>推荐标签：喜欢XXX的也喜欢，中国大陆 温情 家庭，2016年度冷门佳片，伍迪艾伦导演，真实事件改编，2017年评分最高的日本电影，评分最高的历史片</li>
+</ul>
+</li>
+<li>
+<p>排行榜（从众心理）</p>
+<ul>
+<li>TOP250</li>
+<li>分类TOP20</li>
+<li>年度榜单（分类）</li>
+<li>一周口碑榜</li>
+<li>实时热门电影</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h4 id="后续想法">后续想法</h4>
+<ol>
+<li>个性化推荐中口碑比较好的一个是豆瓣FM和后期的网易云音乐，一个是现在的头条（技术而已）</li>
+<li>音乐和资讯的推荐相对电影更简单，因为电影的验证成本比较高（2个小时+可以观看），所以难度也更大</li>
+<li>好的体验：想看电影在推荐里面发现挺有兴趣——很容易找到资源——看了之后发现真不错（豆瓣推荐的电影，这套流程非常长。</li>
+</ol>
+</span></p></div><div id = "warn"></div>
+	<br>
+	<hr>
+<div style="color: #ccc;font-size:14px;"><i class="fa fa-user"></i>本文由<a rel="license" href="/">碎碎念</a>创作</div>	
+<div style="color: #ccc;font-size:14px;"><i class="fa fa-cc"></i>该文章采用<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。转载请注明出处！</div>
+<div style="color: #ccc;font-size:14px;"><i class="fa fa-clock-o"></i>发布时间为：2020-04-03</div>   
+
+</div>
+</div>
+
+<style type="text/css">
+#mememe {
+	border:3px;
+	border-radius:5px;
+    background-repeat: no-repeat;
+    height: 100%;
+	width: 100%;
+	display: inline-block;
+	border-radius:5px; 
+}
+</style>
+
+<div style="width:100%;overflow:hidden">
+
+          <div style="float:right;text-align:right;color:#ccc;font-size:18px;width:50%;">
+            下一篇
+            <a href="https://lilulula.github.io/post/ce-lue-chan-pin-shi-li/">
+              <p class="post-title">
+                <b>策略产品实例</b>
+              </p>
+            </a>
+          </div>
+
+
+
+          <div style="float:left;text-align:left;color:#ccc;font-size:18px;width:50%;">
+            上一篇
+            <a href="https://lilulula.github.io/post/i-mei-zhou-shu-ru-e001/">
+              <p class="post-title">
+                <b>ℹ️ 每周输入E001</b>
+              </p>
+            </a>
+          </div>
+
+</div>
+
+<div class="doc_comments">
+
+</div>
+<script>
+var link="";$("img").each((i,o)=>{var o=$(o);if(o.attr("src").indexOf("sinaimg")>0||o.attr("src").indexOf("qpic")>0||o.attr("src").indexOf("baidu")>0||o.attr("src").indexOf("sinaimg")>0){o.attr("referrerpolicy","no-referrer");link=o.attr("src");o.attr("src",link);}});
+imgList = document.querySelectorAll('img')
+imgList.forEach(img => {
+  if (img.alt !== "logo" && img.alt !== "featureimg"){
+  let div1 = document.createElement('div')
+  let div = document.createElement('div')
+  div.className='back';
+  div.setAttribute("data-src",img.src)
+  var figuration = document.createElement("figcaption")
+  figuration.innerHTML = '<a href="' + img.src + '">' + img.alt + '</a>'
+  img.replaceWith(div1)
+  div1.appendChild(div)
+  div.appendChild(img)
+  div1.appendChild(figuration)}
+})
+$('img').on('error',function(){$(this).prop('src','https://lilulula.github.io//media/images/broken.jpg')});$("a").attr("rel","external nofollow");$("a[rel='external nofollow']").attr("target","_blank");$("a[href^='#']").removeAttr("target");$("a.ex").removeAttr("rel");$("a.ex").removeAttr("target");
+content="<div class='warn'>本文最后更新于2020-04-03，已超过 1 年没有更新，涉及的内容可能已经失效！</div>";var date1="2020-04-03 10:23:12";date1=date1.replace("-","/");var date2=new Date();var date3=date2.getTime()-new Date(date1).getTime();var days=Math.floor(date3/(24*3600*1000));if(days>=365){document.getElementById("warn").innerHTML=content};
+$('#pjax-container').lightGallery({
+    selector: '.back'
+});
+tocbot.init({
+	tocSelector: '.toc',
+	contentSelector: '.main-inner',
+	headingSelector: 'h1, h2, h3, h4, h5',
+	positionFixedSelector: ".toc",
+	scrollSmooth: true,
+	fixedSidebarOffset: 'auto',
+    scrollSmoothOffset: -80,
+    headingsOffset: -500
+});
+</script>
+  </div>
+</div>
+
+
+      </div>
+<div class="toc-container">
+<ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E9%97%AE%E9%A2%98%E8%B1%86%E7%93%A3%E7%94%B5%E5%BD%B1%E7%9A%84%E7%BD%91%E9%A1%B5%E5%96%9C%E6%AC%A2%E8%BF%99%E9%83%A8%E7%94%B5%E5%BD%B1%E7%9A%84%E4%BA%BA%E4%B9%9F%E5%96%9C%E6%AC%A2%E6%A8%A1%E5%9D%97%E7%9A%84%E7%AD%96%E7%95%A5%E4%BC%98%E5%8C%96">问题：豆瓣电影的网页「喜欢这部电影的人也喜欢」模块的策略优化</a></li>
+<li><a href="#%E5%BC%95%E7%94%B3%E7%9A%84%E6%80%9D%E8%80%83-%E5%A6%82%E4%BD%95%E5%8F%91%E7%8E%B0%E6%9B%B4%E5%A4%9A%E5%86%85%E5%AE%B9">引申的思考-如何发现更多内容</a></li>
+<li><a href="#%E8%B1%86%E7%93%A3%E5%81%9A%E4%BA%86%E5%93%AA%E4%BA%9B%E4%BC%98%E5%8C%96%E5%91%A2">豆瓣做了哪些优化呢</a></li>
+<li><a href="#%E5%90%8E%E7%BB%AD%E6%83%B3%E6%B3%95">后续想法</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+    </div>
+	
+   <div class="footer">
+<div class="site_footer_wrap"><div class="site_footer">
+
+      <div class="mysocials"><div class="my_socials">
+		   
+			   
+    
+			   
+    
+			   
+    
+			   
+    
+			   
+    
+			   
+    
+</div>
+      </div>
+
+      <div class="copyright" id="copyright">
+	  <script>
+		var date=new Date;
+		var year=date.getFullYear(); 
+		document.write("Copyright © "+year+" " + "碎碎念. ");
+		</script>
+		Powered by lula.
+		<br>
+		本站已稳定运行了
+		<strong><script type="text/javascript">
+		var urodz= new Date("08/27/2016");
+		var now = new Date();
+		var ile = now.getTime() - urodz.getTime();
+		var dni = Math.floor(ile / (1000 * 60 * 60 * 24));
+		document.write(+dni)
+		</script>
+		</strong>天
+		<br>
+		本站总访问量为 <strong><span id="busuanzi_value_site_uv"></span></strong> 次
+	  
+      </div>
+	  <img src="https://lilulula.github.io//media/images/font.svg">
+
+    </div>
+
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/love.js"></script>
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/darkmode.js"></script>
+<script>
+var options = {
+  bottom: '64px', // default: '32px'
+  right: '32px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: false, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+
+//const darkmode = new Darkmode(options);
+//darkmode.showWidget();
+
+</script>
+<script>
+hljs.initHighlightingOnLoad();
+</script>
+
+</body>
+
+</html>

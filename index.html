@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta name="renderer" content="webkit">
+<meta name="description" content="Memory is important">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+<title>碎碎念</title>
+<link href="https://lilulula.github.io//styles/main.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/KaTeX/0.10.2/katex.min.css"/>
+<script src="//cdn.bootcss.com/KaTeX/0.10.2/katex.min.js"></script>
+<script src="//cdn.bootcss.com/KaTeX/0.10.2/contrib/auto-render.min.js"></script>
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/jquery.js"></script>
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/jquery.pjax.min.js"></script>
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/basic.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+<script async type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script async type="text/javascript" src="https://lilulula.github.io//media/scripts/search.js"></script>
+
+<script type="text/javascript" src="https://lilulula.github.io//media/js/lightgallery.min.js"></script>
+<script src="https://cdn.bootcss.com/tocbot/4.8.1/tocbot.js"></script>
+
+  
+  <meta name="google-site-verification" content="_ltrafuJbmLyX8JX46vuFhMg13tv9yJuC2m0SxJsYFY" />
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="logo_title">
+		  
+        <div class="title animated fadeInDown"><img id="img1" alt="logo" style="display:inline-block;" src="https://lilulula.github.io//images/avatar.png"/>
+<script>
+var r = 0;
+    window.onload = function(){
+        var current = 0;
+        document.getElementById('img1').onclick = function(){
+            current = (current+90)%360;
+            this.style.transform = 'rotate('+current+'deg)';
+        }
+    };
+</script>
+          <h1 title="碎碎念" class="weaklink"><a  href="/">碎碎念</a>
+
+          </h1>
+
+          <div class="navbar weaklink">
+            <div class="normal_nav">
+
+<div class="bitcron_nav_container">
+
+
+  <div class="bitcron_nav">
+    <div class="mixed_site_nav_wrap site_nav_wrap">
+		
+      <ul class="mixed_site_nav site_nav sm sm-base">
+	  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/post/about" class="selected active current nav__item" >关于</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="https://lulalilu.github.io//post/dou-ban-shu-ying-yin/" class="selected active current nav__item" >我的书影音</a>
+  </li>
+  
+ 
+ <li>
+
+      </ul>
+	  
+
+      <div class="clear clear_nav_inline_end"></div>
+
+<div class="search">
+<i class="search-icon fa fa-search search-start"></i>
+<input type="text" class="search-input" placeholder="Searching..." />
+<i class="search-icon fa fa-refresh search-clear"></i>
+<div class="search-results"></div>
+</div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="clear clear_nav_end"></div>
+
+</div>
+
+            </div>
+			
+			<div class="hamberger"><i class="fa fa-bars"></i>
+<i class="fa fa-times"></i>
+
+			</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hidden_nav animated fadeInDown">
+
+<div class="bitcron_nav_container">
+
+
+  <div class="bitcron_nav">
+    <div class="mixed_site_nav_wrap site_nav_wrap">
+      <ul class="mixed_site_nav site_nav sm sm-base">
+	
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/post/about" class="selected active current nav__item" >关于</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="https://lulalilu.github.io//post/dou-ban-shu-ying-yin/" class="selected active current nav__item" >我的书影音</a>
+
+  </li>
+
+
+
+
+      </ul>
+
+      <div class="clear clear_nav_inline_end"></div>
+    </div>
+
+  </div>
+
+
+
+  <div class="clear clear_nav_end"></div>
+
+</div>
+
+      </div>
+
+    </div>
+
+<style type="text/css">
+.search {
+    position: relative;
+    height: 30px;
+    text-align: right;
+    line-height: 30px;
+    padding-right: 10px;
+}
+
+.search .search-icon {
+    float: right;
+    height: 100%;
+    margin: 0 10px;
+    line-height: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.search .search-input {
+    float: right;
+    width: 30%;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.search .search-clear {
+    display: none;
+}
+
+.search .search-results {
+    display: block;
+    z-index: 1000;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    width: 50%;
+    max-height: 400px;
+    overflow: auto;
+    text-align: left;
+    border-radius: 5px;
+    box-shadow: 0 .3rem .5rem #333;
+}
+
+.search .search-results .result-item {
+    color: #000;
+    margin: 5px;
+    padding: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+</style>
+
+
+    <div class="main" id="pjax-container">
+      <div class="main-inner">
+
+<div class="content">
+
+
+
+
+
+
+  <div class="post_list" >
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://lilulula.github.io/post/bi-ji-zhong-guo-jian-zhu-shi/" > [笔记]中国建筑史</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p></p></div></div>
+  <a class="pure-button" href="https://lilulula.github.io/post/bi-ji-zhong-guo-jian-zhu-shi/">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2023-08-14
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		16637
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		57 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://lilulula.github.io/post/course3-build-wireframes-and-low-fidelity-prototypes/" >Course3-Build Wireframes and Low-Fidelity Prototypes</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p></p></div></div>
+  <a class="pure-button" href="https://lilulula.github.io/post/course3-build-wireframes-and-low-fidelity-prototypes/">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2023-07-16
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		5828
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		33 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://lilulula.github.io/post/yi-jian-zhi-shu-yu-zi-ji-de-fang-jian/" >📖一间只属于自己的房间</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p></p></div></div>
+  <a class="pure-button" href="https://lilulula.github.io/post/yi-jian-zhi-shu-yu-zi-ji-de-fang-jian/">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2020-05-09
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		1371
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		5 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://lilulula.github.io/post/reng-diao-shu-ben-shang-jie-qu-xi-wang-bing/" >📖扔掉书本上街去—希望病</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p></p></div></div>
+  <a class="pure-button" href="https://lilulula.github.io/post/reng-diao-shu-ben-shang-jie-qu-xi-wang-bing/">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2020-05-09
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://lilulula.github.io/tag/ltcvoOyb_/" class="tag">
+				读书
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		985
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		4 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://lilulula.github.io/post/wu-ren-jia-shi-ke-pu/" >📖无人驾驶入门书</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p><p>作者：胡迪·利普森 梅尔芭·库曼<br>
+评分：***<br>
+短评：因为跳槽而想了解的行业，作为入门书很好，一方面可以解答很多普通大众对于自动驾驶的疑惑点，另一方面也简单介绍了自动驾驶涉及的软硬件传感器等入门知识。看完之后还是很看好无人驾驶的未来的，毕竟是小学作文中对于未来设想的重要场景之一。</p>
+<p>以下笔记部分个人向纪录</p>
+</p></div></div>
+  <a class="pure-button" href="https://lilulula.github.io/post/wu-ren-jia-shi-ke-pu/">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2020-05-09
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://lilulula.github.io/tag/ltcvoOyb_/" class="tag">
+				读书
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		4242
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		15 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://lilulula.github.io/post/i-mei-zhou-shu-ru-e001/" >ℹ️ 每周输入E001</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p></p></div></div>
+  <a class="pure-button" href="https://lilulula.github.io/post/i-mei-zhou-shu-ru-e001/">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2020-04-18
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		4449
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		15 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://lilulula.github.io/post/dou-ban-dian-ying-tui-jian-ce-lue-you-hua/" >豆瓣电影推荐策略优化</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p></p></div></div>
+  <a class="pure-button" href="https://lilulula.github.io/post/dou-ban-dian-ying-tui-jian-ce-lue-you-hua/">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2020-04-03
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://lilulula.github.io/tag/2mDZ8v3Gl/" class="tag">
+				产品
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		1614
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		6 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://lilulula.github.io/post/ce-lue-chan-pin-shi-li/" >策略产品实例</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p></p></div></div>
+  <a class="pure-button" href="https://lilulula.github.io/post/ce-lue-chan-pin-shi-li/">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2020-04-02
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://lilulula.github.io/tag/2mDZ8v3Gl/" class="tag">
+				产品
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		1415
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		5 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://lilulula.github.io/post/ce-lue-chan-pin-fang-fa-lun/" >策略产品方法论</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p></p></div></div>
+  <a class="pure-button" href="https://lilulula.github.io/post/ce-lue-chan-pin-fang-fa-lun/">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2020-04-01
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+			<a href="https://lilulula.github.io/tag/2mDZ8v3Gl/" class="tag">
+				产品
+			</a>
+			
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		2789
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		10 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+
+	
+<div class="post">
+  <div class="post_title weaklink">
+    <h2><a href="https://lilulula.github.io/post/lesslesshun-yin-gu-shi-greatergreater/" >🎬《婚姻生活》</a>
+    </h2>
+  </div>
+  <div class="post_content markdown"><div class="p_part"><p></p></div></div>
+  <a class="pure-button" href="https://lilulula.github.io/post/lesslesshun-yin-gu-shi-greatergreater/">Read More >>> </a>
+  <div class="post_footer">
+<div class="info weaklink">
+	<i class="fa fa-calendar">
+	</i>
+	<span class="date_info">
+		2020-01-30
+	</span>
+	<i class="fa fa-bookmark-o">
+	</i>
+	<span class="tags_info weaklink">
+		
+	</span>
+	<i class="fa fa-anchor">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		430
+			字
+	</span>
+	<i class="fa fa-clock-o">
+	</i>
+	<span class="weaklink" style="margin-right:15px;">
+		2 min read
+	</span>
+</div>
+
+  </div>
+
+</div>
+	
+	
+
+<div class="paginator pager pagination" >
+	
+  <div class="paginator_container pagination_container">
+	  
+	    								
+										
+	  
+	  <a href="https://lilulula.github.io/page/2"  class="btn next older-posts older_posts"> Older Posts </a>
+
+
+
+    <div style="clear:both;height:0;"></div>
+
+
+  </div>
+
+</div>
+</div>
+  </div>
+</div>
+
+    </div>
+   <div class="footer">
+<div class="site_footer_wrap"><div class="site_footer">
+
+      <div class="mysocials"><div class="my_socials">
+		   
+			   
+    
+			   
+    
+			   
+    
+			   
+    
+			   
+    
+			   
+    
+</div>
+      </div>
+
+      <div class="copyright" id="copyright">
+	  <script>
+		var date=new Date;
+		var year=date.getFullYear(); 
+		document.write("Copyright © "+year+" " + "碎碎念. ");
+		</script>
+		Powered by lula.
+		<br>
+		本站已稳定运行了
+		<strong><script type="text/javascript">
+		var urodz= new Date("08/27/2016");
+		var now = new Date();
+		var ile = now.getTime() - urodz.getTime();
+		var dni = Math.floor(ile / (1000 * 60 * 60 * 24));
+		document.write(+dni)
+		</script>
+		</strong>天
+		<br>
+		本站总访问量为 <strong><span id="busuanzi_value_site_uv"></span></strong> 次
+	  
+      </div>
+	  <img src="https://lilulula.github.io//media/images/font.svg">
+
+    </div>
+
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/love.js"></script>
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/darkmode.js"></script>
+<script>
+var options = {
+  bottom: '64px', // default: '32px'
+  right: '32px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: false, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+
+//const darkmode = new Darkmode(options);
+//darkmode.showWidget();
+
+</script>
+<script>
+hljs.initHighlightingOnLoad();
+</script>
+
+</body>
+
+</html>

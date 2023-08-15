@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+  <head lang="zh">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<meta content="telephone=no" name="format-detection"/>
+<meta name="renderer" content="webkit">
+<meta name="description" content="Memory is important">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+<title>Google Map 从0到1的过程 | 碎碎念</title>
+<link href="https://lilulula.github.io//styles/main.css" type="text/css" rel="stylesheet"/>
+<link rel="stylesheet" href="//cdn.bootcss.com/KaTeX/0.10.2/katex.min.css"/>
+<script src="//cdn.bootcss.com/KaTeX/0.10.2/katex.min.js"></script>
+<script src="//cdn.bootcss.com/KaTeX/0.10.2/contrib/auto-render.min.js"></script>
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/jquery.js"></script>
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/jquery.pjax.min.js"></script>
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/basic.js"></script>
+<script type="text/javascript" src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+<script src="//cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+<script async type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script async type="text/javascript" src="https://lilulula.github.io//media/scripts/search.js"></script>
+
+<script type="text/javascript" src="https://lilulula.github.io//media/js/lightgallery.min.js"></script>
+<script src="https://cdn.bootcss.com/tocbot/4.8.1/tocbot.js"></script>
+
+  </head>
+  <body>
+     <div class="header">
+      <div class="logo_title">
+		  
+        <div class="title animated fadeInDown"><img id="img1" alt="logo" style="display:inline-block;" src="https://lilulula.github.io//images/avatar.png"/>
+<script>
+var r = 0;
+    window.onload = function(){
+        var current = 0;
+        document.getElementById('img1').onclick = function(){
+            current = (current+90)%360;
+            this.style.transform = 'rotate('+current+'deg)';
+        }
+    };
+</script>
+          <h1 title="碎碎念" class="weaklink"><a  href="/">碎碎念</a>
+
+          </h1>
+
+          <div class="navbar weaklink">
+            <div class="normal_nav">
+
+<div class="bitcron_nav_container">
+
+
+  <div class="bitcron_nav">
+    <div class="mixed_site_nav_wrap site_nav_wrap">
+		
+      <ul class="mixed_site_nav site_nav sm sm-base">
+	  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/post/about" class="selected active current nav__item" >关于</a>
+  </li>
+  
+ 
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="https://lulalilu.github.io//post/dou-ban-shu-ying-yin/" class="selected active current nav__item" >我的书影音</a>
+  </li>
+  
+ 
+ <li>
+
+      </ul>
+	  
+
+      <div class="clear clear_nav_inline_end"></div>
+
+<div class="search">
+<i class="search-icon fa fa-search search-start"></i>
+<input type="text" class="search-input" placeholder="Searching..." />
+<i class="search-icon fa fa-refresh search-clear"></i>
+<div class="search-results"></div>
+</div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="clear clear_nav_end"></div>
+
+</div>
+
+            </div>
+			
+			<div class="hamberger"><i class="fa fa-bars"></i>
+<i class="fa fa-times"></i>
+
+			</div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hidden_nav animated fadeInDown">
+
+<div class="bitcron_nav_container">
+
+
+  <div class="bitcron_nav">
+    <div class="mixed_site_nav_wrap site_nav_wrap">
+      <ul class="mixed_site_nav site_nav sm sm-base">
+	
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/" class="selected active current nav__item" >首页</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/archives" class="selected active current nav__item" >归档</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/tags" class="selected active current nav__item" >标签</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="/post/about" class="selected active current nav__item" >关于</a>
+
+  </li>
+
+
+  <li><a id="d2ef19af68cc211e98f8a0242ac110003" href="https://lulalilu.github.io//post/dou-ban-shu-ying-yin/" class="selected active current nav__item" >我的书影音</a>
+
+  </li>
+
+
+
+
+      </ul>
+
+      <div class="clear clear_nav_inline_end"></div>
+    </div>
+
+  </div>
+
+
+
+  <div class="clear clear_nav_end"></div>
+
+</div>
+
+      </div>
+
+    </div>
+
+<style type="text/css">
+.search {
+    position: relative;
+    height: 30px;
+    text-align: right;
+    line-height: 30px;
+    padding-right: 10px;
+}
+
+.search .search-icon {
+    float: right;
+    height: 100%;
+    margin: 0 10px;
+    line-height: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.search .search-input {
+    float: right;
+    width: 30%;
+    height: 30px;
+    line-height: 30px;
+    margin: 0;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.search .search-clear {
+    display: none;
+}
+
+.search .search-results {
+    display: block;
+    z-index: 1000;
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    width: 50%;
+    max-height: 400px;
+    overflow: auto;
+    text-align: left;
+    border-radius: 5px;
+    box-shadow: 0 .3rem .5rem #333;
+}
+
+.search .search-results .result-item {
+    color: #000;
+    margin: 5px;
+    padding: 3px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+</style>
+
+
+    <div class="main" id="pjax-container">
+      <div class="main-inner">
+<div class="content">
+<style>.toc{overflow-y:auto}.toc>.toc-list{overflow:hidden;position:relative}.toc>.toc-list li{list-style:none}.toc-list{margin:0;padding-left:10px}a.toc-link{color:currentColor;height:100%}.is-collapsible{max-height:1000px;overflow:hidden;transition:all 300ms ease-in-out}.is-collapsed{max-height:0}.is-position-fixed{position:fixed !important;top:0}.is-active-link{font-weight:700}.toc-link::before{background-color:#EEE;content:' ';display:inline-block;height:inherit;left:0;margin-top:-1px;position:absolute;width:2px}.is-active-link::before{background-color:#54BC4B}</style>
+  <div class="post_page" >
+<div class="post">
+  <div class="post_title sm_margin">
+    <h2><a>Google Map 从0到1的过程</a>
+    </h2>
+  </div>
+<script>
+function lan(){
+	if (document.getElementById("lan").innerText == "繁"){
+		var s=document.getElementById("tongwenlet_cn");
+		if(s != null){
+		document.body.removeChild(s);
+		}
+		var s = document.createElement("script");
+		s.language = "javascript";
+		s.type = "text/javascript";
+		s.src = "https://git.oschina.net/runningcheese/JiathisQR.js/raw/master/bookmarklet_tw.js";
+		s.id = "tongwenlet_cn";
+		document.body.appendChild(s);
+		document.getElementById("lan").innerHTML = "简"
+	}
+	else if(document.getElementById("lan").innerText == "簡"){
+		var s=document.getElementById("tongwenlet_cn");
+		if(s != null){
+		document.body.removeChild(s);
+		}
+		var s = document.createElement("script");
+		s.language = "javascript";
+		s.type = "text/javascript";
+		s.src = "https://git.oschina.net/runningcheese/JiathisQR.js/raw/master/bookmarklet_cn.js";
+		s.id = "tongwenlet_cn";
+		document.body.appendChild(s);
+		document.getElementById("lan").innerHTML = "繁"
+		}
+}
+
+function change(){	
+    var rand = Math.random()*1+1;
+    var num = window.getComputedStyle(document.getElementsByName("show")[0],undefined).fontSize;
+	num = num.slice(0,-2); 
+    document.getElementById("show").style.fontSize = num - rand +'px';
+}
+</script>
+  <div class="post_details">
+    <div class="info"><i class="fa fa-calendar"></i>
+<span class="date_info">2019-10-23</span>
+<i class="fa fa-eye"></i>
+<span class="date_info"><span id="busuanzi_value_page_pv"></span> Views</span>
+<i class="fa fa-bookmark-o"></i>
+<span class="tags_info weaklink">
+	
+	<a href="https://lilulula.github.io/tag/ltcvoOyb_/" class="tag">读书</a>
+
+	<a href="https://lilulula.github.io/tag/2mDZ8v3Gl/" class="tag">产品</a>
+
+</span>
+<i class="fa fa-anchor"></i>
+<span style="margin-right:15px">
+1938字
+</span>
+<i class="fa fa-clock-o"></i>
+<span style="margin-right:15px">
+7 min read
+</span>
+<span style="margin-right:15px">
+<i class="fa fa-share"></i>
+<a title="QR code" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://lilulula.github.io/post/never-lost-again/"><i class="fa fa-qrcode"></i></a>
+<a title="qq share" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://lilulula.github.io/post/never-lost-again/&sharesource=qzone&title=Google Map 从0到1的过程&pics=https://blog.blinkstar.cn/images/avatar.png&summary=&lt;p&gt;Never Lost Again&lt;br&gt;
+The Google Mapping Revolution That Sparked New Industries and Augmented Our Reality&lt;/p&gt;
+&lt;p&gt;最开始知道这本书也是看到公众号中有一篇拆书的文章，当时只有英文版，之后出了中文版就果断买回来看了，读了7年的GIS专业看完整本书有种热血沸腾的感觉。&lt;/p&gt;
+"><i class="fa fa-qq"></i></a>
+<a title="weibo share" target="_blank" href="https://service.weibo.com/share/share.php?url=https://lilulula.github.io/post/never-lost-again/&sharesource=weibo&title=Google Map 从0到1的过程 + " - " + &lt;p&gt;Never Lost Again&lt;br&gt;
+The Google Mapping Revolution That Sparked New Industries and Augmented Our Reality&lt;/p&gt;
+&lt;p&gt;最开始知道这本书也是看到公众号中有一篇拆书的文章，当时只有英文版，之后出了中文版就果断买回来看了，读了7年的GIS专业看完整本书有种热血沸腾的感觉。&lt;/p&gt;
+&pic="https://blog.blinkstar.cn/images/avatar.png"><i class="fa fa-weibo"></i></a>
+</span>
+<span style="margin-right:15px">
+<a id="daxiao" href="javascript:void(0);" onclick="change();" title="调整字体大小"><i class="fa fa-font"></i></a>
+</span>
+<span style="margin-right:15px">
+<a id="lan" href="javascript:void(0);" onclick="lan();" title="调整简繁体">繁</a>
+</span>
+</div>
+  </div>
+
+    <div class="post_content markdown">
+	
+	<div style="background-image: url('https://lilulula.github.io//post-images/never-lost-again.png');background-repeat: no-repeat;background-size:100% auto;margin-top:32px;padding-bottom: 50%;"></div>
+	
+    <div name="show" id="show">
+	<p class="md_block"><span class="md_line md_line_start md_line_end"><p>Never Lost Again<br>
+The Google Mapping Revolution That Sparked New Industries and Augmented Our Reality</p>
+<p>最开始知道这本书也是看到公众号中有一篇拆书的文章，当时只有英文版，之后出了中文版就果断买回来看了，读了7年的GIS专业看完整本书有种热血沸腾的感觉。</p>
+<!-- more -->
+<h1 id="内容简介">内容简介</h1>
+<p>整本书详细描述了谷歌地图漫长的发展史，从Keyhole 从1999年开始起步，24个人的团队，然后2004年被谷歌收购，到现在的月活十亿的产品的整个过程。</p>
+<h2 id="初创-keyhole">初创-Keyhole</h2>
+<p>产品最开始的起源只是一种图片无缝缩放技术，和数字地图结合在一起之后创造出了一种新的产品体验，但是从1999年开始一直遭遇没有商业化和盈利方式的问题，所有人在最开始看到都会觉得很酷，但是然后呢？当时地图领域的老大Esri拥有几十万客户端，营收达到3亿，但是创始人John Hanke发现了Esri的三个致命缺点：复杂，没有数据，速度慢，所以EarthView的竞争策略就是<strong>普通人都能用，统一的数据加上流畅的操作体验</strong>。然后经过创业初期的种种困难，客户从Nvidia到房地产经纪人到CNN，最后一炮而红，被谷歌以3000万美元的价格收购。</p>
+<h2 id="google-map-10">Google Map 1.0</h2>
+<blockquote>
+<p>在Keyhole一起奋斗的几年中，我们可能创造了一个了不起的东西，但现在，我们正在走向一个未知领域。因此如果我们没有计划，很多谷歌员工就会跑来告诉我们该怎么做，而我们的团队将会四分五裂。<br>
+所有的29个人都对公司的成功至关重要，约翰找不出一个缺了他也行的人。这种感觉很奇妙，而且Keyhole的每一个人都有这种感觉，这是一种罕见而美妙的领悟，一个会让人永远记住的领悟。</p>
+</blockquote>
+<ol>
+<li>John保留了全部29个人作为收购的先决条件</li>
+<li>作者Bill在加入之前被问及你是想做PM还是PMM（产品营销经理）的问题，之前Bill是兼任的，最后在John的建议下不要走技术线，而是名义上“PMM”，不在技术线的汇报体系中，但是仍然身兼PM和PMM两份工作。</li>
+<li>和MapQuest(网页地图服务)竞争，当时地图搜索的2/3的占有率，需要将keyhole的卫星数据和谷歌之前更早收购的另外4人地图团队（Where2Tech）的浏览器地图渲染技术合并在一起，因此这是两个团队的融合，</li>
+<li>和谷歌搜索团队的融合过程，谷歌搜索的负责人玛丽莎，他的下属Bret之前负责Where2Tech，而谷歌的其他部门负责人希望把Keyhole拆分到各个职能部门中。最后的结果：John的头衔是“Keyhole总经理”，原来的Keyhole团队仍然汇报给John，John汇报给Google的产品战略副总裁Jonathan Rosenberg。同时，Bret和Google原来的地图团队仍然汇报给玛丽莎。这或许不是最好的方案，但至少是个清楚的方案，避免了不必要的纠缠。</li>
+<li>而谷歌在2002年就有了地址搜索项目 Google Search By location，可以结构化搜索把地址文字和地理位置联系在一起。</li>
+<li>所以，Google Maps总共包含了三支团队：汇报给John的Keyhole，汇报给Bret（Bret再汇报给梅姐）的Where2，汇报给Marssa的Google Local。梅姐希望John汇报给他，John不愿意这样，所以两人的关系比较紧张。实际上，这种紧张贯穿了Keyhole团队在Google的始终，最终他们选择离开也和梅姐有关。</li>
+<li>但是，大家又都保持了足够的职业素养，关系紧张归关系紧张，项目仍然在紧锣密鼓地推进。从2004年10月Keyhole被收购，到2005年2月Google Maps发布，前后不过四个月的时间，没有足够高的合作效率是绝对做不到这点的。2015年2月8日，上线首日Google Map 获得1000万PV，4月4日开始提供卫星地图。</li>
+</ol>
+<h2 id="google-earth-10">Google Earth 1.0</h2>
+<p>谷歌地图发布后，微软雅虎等纷纷进场，竞争氛围提升了地图在谷歌中的重要性。</p>
+<blockquote>
+<p>John根据自己在地图行业的经验和思考，写了若干邮件给布林、佩奇、施密特，阐述Google Maps的战略和战术。同时，John根据对微软的报道，推断出微软和航空图片和卫星图片提供商之间的合作方式和价格，并评估了这些服务商的能力。按照John拟定的计划，Google应 当加速发布自己版本的EarthViewer软件，Keyhole、Google Local、Where2 Tech三个团队必须合为一体，同时必须花大力气充实自己的数据，他同时也列出了重要的地图服务提供商的名单。<br>
+到2005年夏天，所有的Google员工都收到了一封邮件：Google要新成立一条产品线Google Geo，之前的Keyhole, Google Local, Where2 Tech三个团队悉数并入。John成为这条新产品线的老大，之前Keyhole的工程副总裁Brian McClendon，成了所有技术人员的汇报对象。John的汇报对象是Google的产品战略副总裁Jonathan Rosenberg。<br>
+之前一直困扰John的他和梅姐的关系问题，现在已经彻底不存在了，梅姐已经出局，纵然心有不甘，也无话可说。</p>
+</blockquote>
+<p>新的团队开始开发客户端地图，更多的卫星数据，更强大的搜索功能，测距标注工具等等，也就是最后的Google Earth。</p>
+<p>之后的故事就是1到100的事情了，直到2010年10月John宣布离开谷歌，由梅姐负责Geo团队，之后2012年7月梅姐离开去了Yahoo。<br>
+好奇John离开之后干了什么，创立了Niantic公司，和任天堂一起做了游戏，Pokémon GO就是他做的！真是一个好酷的人啊。</p>
+<h1 id="感受">感受</h1>
+<p>作为GIS（Geography Information System）这个专业的毕业生，对Esri这家公司再熟悉不过，从入学到现在一直使用的工具都是他家的ArcGIS，而谷歌地图也是大一入门课程必备的案例，所以读这本书的时候很多时候会非常深的带入感。</p>
+<p>读书的时候时常在想为什么每次上导论课的时候觉得地理信息位置和生活的方方面面都息息相关，但是毕业之后却发现除了产出一些难用也没人用的地理信息管理系统之外还有什么实用的价值呢？工作之后也看到业内的公众号在问，导航打车点评这些本质上都是基于位置的服务（LBS）为什么都没有在这个学科内部孵化出来呢？</p>
+<p>看完这本书其中keyhole定位和超越Esri的过程就理解了，但是也许本来两个产品的定位就不同吧，一个是针对普通人一个是针对专家，所以受众和影响面也不太一样，在市场中找到自己最核心的痛点。</p>
+<p>其次就是融入谷歌的过程也是大公司的通病啊，有人的地方就有江湖</p>
+<p>最后就是对John的佩服，任何时候都能重新开始做自己想做的事情。</p>
+<p>内容简介的人事斗争部分参考了这篇文章https://mp.weixin.qq.com/s/UCsoJLzdIfT-DaZ622dWOQ，翻译实在太难了理解了😷</p>
+</span></p></div><div id = "warn"></div>
+	<br>
+	<hr>
+<div style="color: #ccc;font-size:14px;"><i class="fa fa-user"></i>本文由<a rel="license" href="/">碎碎念</a>创作</div>	
+<div style="color: #ccc;font-size:14px;"><i class="fa fa-cc"></i>该文章采用<a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。转载请注明出处！</div>
+<div style="color: #ccc;font-size:14px;"><i class="fa fa-clock-o"></i>发布时间为：2019-10-23</div>   
+
+</div>
+</div>
+
+<style type="text/css">
+#mememe {
+	border:3px;
+	border-radius:5px;
+    background-repeat: no-repeat;
+    height: 100%;
+	width: 100%;
+	display: inline-block;
+	border-radius:5px; 
+}
+</style>
+
+<div style="width:100%;overflow:hidden">
+
+          <div style="float:right;text-align:right;color:#ccc;font-size:18px;width:50%;">
+            下一篇
+            <a href="https://lilulula.github.io/post/san-jie-ke-chan-pin-p2-ke-cheng/">
+              <p class="post-title">
+                <b>三节课产品P2课程</b>
+              </p>
+            </a>
+          </div>
+
+
+
+          <div style="float:left;text-align:left;color:#ccc;font-size:18px;width:50%;">
+            上一篇
+            <a href="https://lilulula.github.io/post/qin-ai-de-san-mao/">
+              <p class="post-title">
+                <b>📖《亲爱的三毛》</b>
+              </p>
+            </a>
+          </div>
+
+</div>
+
+<div class="doc_comments">
+
+</div>
+<script>
+var link="";$("img").each((i,o)=>{var o=$(o);if(o.attr("src").indexOf("sinaimg")>0||o.attr("src").indexOf("qpic")>0||o.attr("src").indexOf("baidu")>0||o.attr("src").indexOf("sinaimg")>0){o.attr("referrerpolicy","no-referrer");link=o.attr("src");o.attr("src",link);}});
+imgList = document.querySelectorAll('img')
+imgList.forEach(img => {
+  if (img.alt !== "logo" && img.alt !== "featureimg"){
+  let div1 = document.createElement('div')
+  let div = document.createElement('div')
+  div.className='back';
+  div.setAttribute("data-src",img.src)
+  var figuration = document.createElement("figcaption")
+  figuration.innerHTML = '<a href="' + img.src + '">' + img.alt + '</a>'
+  img.replaceWith(div1)
+  div1.appendChild(div)
+  div.appendChild(img)
+  div1.appendChild(figuration)}
+})
+$('img').on('error',function(){$(this).prop('src','https://lilulula.github.io//media/images/broken.jpg')});$("a").attr("rel","external nofollow");$("a[rel='external nofollow']").attr("target","_blank");$("a[href^='#']").removeAttr("target");$("a.ex").removeAttr("rel");$("a.ex").removeAttr("target");
+content="<div class='warn'>本文最后更新于2019-10-23，已超过 1 年没有更新，涉及的内容可能已经失效！</div>";var date1="2019-10-23 14:55:39";date1=date1.replace("-","/");var date2=new Date();var date3=date2.getTime()-new Date(date1).getTime();var days=Math.floor(date3/(24*3600*1000));if(days>=365){document.getElementById("warn").innerHTML=content};
+$('#pjax-container').lightGallery({
+    selector: '.back'
+});
+tocbot.init({
+	tocSelector: '.toc',
+	contentSelector: '.main-inner',
+	headingSelector: 'h1, h2, h3, h4, h5',
+	positionFixedSelector: ".toc",
+	scrollSmooth: true,
+	fixedSidebarOffset: 'auto',
+    scrollSmoothOffset: -80,
+    headingsOffset: -500
+});
+</script>
+  </div>
+</div>
+
+
+      </div>
+<div class="toc-container">
+<ul class="markdownIt-TOC">
+<li><a href="#%E5%86%85%E5%AE%B9%E7%AE%80%E4%BB%8B">内容简介</a>
+<ul>
+<li><a href="#%E5%88%9D%E5%88%9B-keyhole">初创-Keyhole</a></li>
+<li><a href="#google-map-10">Google Map 1.0</a></li>
+<li><a href="#google-earth-10">Google Earth 1.0</a></li>
+</ul>
+</li>
+<li><a href="#%E6%84%9F%E5%8F%97">感受</a></li>
+</ul>
+
+</div>
+    </div>
+	
+   <div class="footer">
+<div class="site_footer_wrap"><div class="site_footer">
+
+      <div class="mysocials"><div class="my_socials">
+		   
+			   
+    
+			   
+    
+			   
+    
+			   
+    
+			   
+    
+			   
+    
+</div>
+      </div>
+
+      <div class="copyright" id="copyright">
+	  <script>
+		var date=new Date;
+		var year=date.getFullYear(); 
+		document.write("Copyright © "+year+" " + "碎碎念. ");
+		</script>
+		Powered by lula.
+		<br>
+		本站已稳定运行了
+		<strong><script type="text/javascript">
+		var urodz= new Date("08/27/2016");
+		var now = new Date();
+		var ile = now.getTime() - urodz.getTime();
+		var dni = Math.floor(ile / (1000 * 60 * 60 * 24));
+		document.write(+dni)
+		</script>
+		</strong>天
+		<br>
+		本站总访问量为 <strong><span id="busuanzi_value_site_uv"></span></strong> 次
+	  
+      </div>
+	  <img src="https://lilulula.github.io//media/images/font.svg">
+
+    </div>
+
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/love.js"></script>
+<script type="text/javascript" src="https://lilulula.github.io//media/scripts/darkmode.js"></script>
+<script>
+var options = {
+  bottom: '64px', // default: '32px'
+  right: '32px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.5s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: false, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+
+//const darkmode = new Darkmode(options);
+//darkmode.showWidget();
+
+</script>
+<script>
+hljs.initHighlightingOnLoad();
+</script>
+
+</body>
+
+</html>
